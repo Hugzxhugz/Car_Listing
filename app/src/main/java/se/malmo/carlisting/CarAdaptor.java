@@ -1,5 +1,5 @@
 package se.malmo.carlisting;
-/*
+
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,11 +22,12 @@ public class CarAdaptor extends RecyclerView.Adapter<CarAdaptor.ViewHolder>  {
         this.context = context;
     }
 
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View itemView = inflater.inflate(R.layout.car_item_view, parent, false);
+        View itemView = inflater.inflate(R.layout.recycler_view_row, parent, false);
 
         ViewHolder holder = new ViewHolder(itemView);
 
@@ -53,10 +54,9 @@ public class CarAdaptor extends RecyclerView.Adapter<CarAdaptor.ViewHolder>  {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            txtModel = itemView.findViewById(R.id.txtModel);
-            txtBrand = itemView.findViewById(R.id.txtBrand);
-            txtPrice = itemView.findViewById(R.id.txtPrice);
+            txtModel = itemView.findViewById(R.id.car_model_label);
+            txtBrand = itemView.findViewById(R.id.car_brand_label);
+            txtPrice = itemView.findViewById(R.id.price_label);
         }
     }
 }
- */
