@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recycler_view);
-        add_button = findViewById(R.id.add_btn);
+        add_button = findViewById(R.id.addBtn);
 
         sqlrepository = SqliteCarRepository.getInstance(getApplicationContext());
 
