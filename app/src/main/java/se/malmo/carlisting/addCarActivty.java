@@ -17,12 +17,15 @@ public class addCarActivty extends AppCompatActivity {
             mileage_input,
             price_input,
             description_input;
+    Repository sqlrepository;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_car_activty);
+
+        sqlrepository = SqliteCarRepository.getInstance(getApplicationContext());
 
         car_model_input = findViewById(R.id.car_model_box);
         car_brand_input = findViewById(R.id.car_brand_box);
@@ -34,8 +37,18 @@ public class addCarActivty extends AppCompatActivity {
     }
 
     public void onConfirmAddBtnClick(View view){
-        Toast.makeText(this, "Successfully added", Toast.LENGTH_SHORT).show();
-        //added this to test if it works. we can add the methods when Jens
-        // finishes the database class.
+        addCar();
+    }
+
+    private void addCar(){
+        Car car = new Car();
+        car.setModel(car_model_input.getText().toString());
+        car.setBrand(car_brand_input.getText().toString());
+        car.setModelYear(year_model_input.getText().toString());
+        car.setMileage(Integer.parseInt(mileage_input.getText().toString()));
+        car.setPrice(Integer.parseInt(price_input.getText().toString()));
+        car.setDescription(description_input.getText().toString());
+
+        sqlrepository.save(car);
     }
 }
