@@ -1,94 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addCarActivty">
+    tools:context=".addCarActivty"
+    android:orientation="vertical"
+    android:gravity="left">
+
 
     <EditText
-        android:id="@+id/car_model_box"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/txtCar_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Car model"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="@string/car_model"
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/car_brand_box"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/txtCar_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Car brand"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/car_model_box" />
+        android:hint="@string/car_brand"
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/year_model_box"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/numModel_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Year model"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/car_brand_box" />
+        android:hint="@string/model_year"
+        android:inputType="number" />
 
     <EditText
-        android:id="@+id/mileage_box"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Mileage"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/year_model_box" />
+        android:gravity="start|top"
+        android:hint="@string/description"
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/price_box"
-        android:layout_width="322dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/numMileage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Price"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/mileage_box" />
+        android:hint="@string/mileage"
+        android:inputType="number" />
 
     <EditText
-        android:id="@+id/description_box"
-        android:layout_width="318dp"
-        android:layout_height="116dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/numPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Description"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/price_box" />
+        android:hint="@string/price"
+        android:inputType="number" />
 
     <Button
-        android:id="@+id/confirm_add_btn"
-        android:layout_width="312dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="30dp"
-        android:onClick="onConfirmAddBtnClick"
-        android:text="Add"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description_box"
-        app:layout_constraintVertical_bias="0.07" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/save"
+        android:textSize="16sp" />
+
+</LinearLayout>
