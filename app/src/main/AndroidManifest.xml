@@ -20,7 +20,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Display_Activity"
+            android:name=".DisplayActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
