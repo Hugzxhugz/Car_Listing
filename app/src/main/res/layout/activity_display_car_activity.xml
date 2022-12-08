@@ -1,149 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".addCarActivty"
+    android:gravity="start"
     android:orientation="vertical"
-    android:gravity="left">
-
+    tools:context=".addCarActivty">
 
     <TextView
         android:id="@+id/txtCarModel"
-        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Car Model"
+        android:layout_marginStart="20dp"
+        android:text="Car model"
         android:textSize="34sp" />
 
-    <Space
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp">
 
         <TextView
-            android:id="@+id/txtCarBrand"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text="Car Brand"
-            android:textSize="20sp" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:id="@+id/txtBrand"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:text="Car brand"
+            android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/txtModelYear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left"
-            android:inputType="text"
-            android:text="Year Model"
-            android:textSize="20sp" />
+            android:id="@+id/txtYear"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:text="Year model"
+            android:textSize="24sp" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+    </TableRow>
 
-    <Space
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+        android:layout_height="70dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
         <TextView
             android:id="@+id/txtMileage"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="match_parent"
-            android:inputType="number"
+            android:layout_marginEnd="20dp"
             android:text="Mileage"
-            android:textSize="20sp" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/txtPrice"
-            android:layout_width="102dp"
-            android:layout_height="56dp"
-            android:inputType="number"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
             android:text="Price"
+            android:textSize="24sp" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/txtDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:maxLines="5"
+            android:text="Description"
             android:textSize="20sp" />
 
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+    </TableRow>
 
-    <Space
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="200dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp">
 
-    <TextView
-        android:id="@+id/txtDescription"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:inputType="textMultiLine"
-        android:text="Description"
-        android:textSize="20sp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="DELETE" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_marginEnd="20dp"
+            android:text="Edit"
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btnEdit"
+            android:id="@+id/delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="EDIT" />
-
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </LinearLayout>
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Delete"
+            android:textSize="20sp" />
+    </TableRow>
 
 </LinearLayout>
