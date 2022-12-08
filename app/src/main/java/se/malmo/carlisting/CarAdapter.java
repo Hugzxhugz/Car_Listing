@@ -2,7 +2,6 @@ package se.malmo.carlisting;
 
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class CarAdaptor extends RecyclerView.Adapter<CarAdaptor.ViewHolder>  {
+public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder>  {
     Context context;
     ArrayList<Car> cars;
 
-    public CarAdaptor(Context context, ArrayList<Car> cars){
+    public CarAdapter(Context context, ArrayList<Car> cars){
         this.cars = cars;
         this.context = context;
     }
