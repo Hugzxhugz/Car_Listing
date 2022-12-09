@@ -45,14 +45,14 @@
 
                 <TextView
                     android:id="@+id/car_model_label"
-                    android:layout_width="340dp"
-                    android:layout_height="49dp"
+                    android:layout_width="267dp"
+                    android:layout_height="56dp"
                     android:layout_marginTop="20dp"
                     android:text="Car model"
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.222"
+                    app:layout_constraintHorizontal_bias="0.114"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/car_brand_label"
                     app:layout_constraintVertical_bias="1.0" />
@@ -61,12 +61,22 @@
                     android:id="@+id/price_label"
                     android:layout_width="83dp"
                     android:layout_height="24dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginEnd="16dp"
                     android:text="Price"
                     android:textSize="15sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="79dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/recycler_view_icon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
