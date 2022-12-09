@@ -18,6 +18,7 @@
         android:inputType="textPersonName"
         android:text="Car Model"
         android:textSize="28dp"
+        app:autoSizeTextType="uniform"
 
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,7 +35,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:textSize="20dp"
-
+        app:autoSizeTextType="uniform"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Car Brand"
@@ -53,7 +54,7 @@
         android:background="@drawable/text_box_border"
         android:ems="10"
         android:textSize="20dp"
-
+        app:autoSizeTextType="uniform"
         android:inputType="number"
         android:text="Year Model"
         android:textAlignment="center"
@@ -72,7 +73,7 @@
         android:background="@drawable/text_box_border"
         android:ems="10"
         android:textSize="20dp"
-
+        app:autoSizeTextType="uniform"
         android:inputType="number"
         android:text="Mileage"
         android:textAlignment="center"
@@ -90,7 +91,7 @@
         android:background="@drawable/text_box_border"
         android:ems="10"
         android:textSize="20dp"
-
+        app:autoSizeTextType="uniform"
         android:inputType="number"
         android:text="Price"
         android:textAlignment="center"
@@ -111,7 +112,7 @@
         android:hint="Description"
         android:background="@drawable/text_box_border"
         android:textSize="20dp"
-
+        app:autoSizeTextType="uniform"
         android:gravity="start|top"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
@@ -130,7 +131,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:id="@+id/CarModelDisplayLabel"
@@ -144,7 +146,8 @@
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:id="@+id/CarBrandDisplayLabel"
@@ -157,7 +160,8 @@
         app:layout_constraintBottom_toTopOf="@+id/txtBrand"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtModel"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:id="@+id/YearModelDisplayLabel"
@@ -171,7 +175,8 @@
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/CarBrandDisplayLabel"
         app:layout_constraintTop_toBottomOf="@+id/txtModel"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:id="@+id/MileageDisplayLabel"
@@ -184,7 +189,8 @@
         app:layout_constraintBottom_toTopOf="@+id/txtMileage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBrand"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:autoSizeTextType="uniform" />
 
     <TextView
         android:id="@+id/PriceDisplayLabel"
@@ -198,7 +204,8 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toEndOf="@+id/MileageDisplayLabel"
         app:layout_constraintTop_toBottomOf="@+id/txtModelYear"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:autoSizeTextType="uniform"/>
 
     <TextView
         android:id="@+id/DescriptionDisplayLabel"
@@ -213,7 +220,8 @@
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMileage"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        app:autoSizeTextType="uniform" />
 
     <ImageView
         android:id="@+id/imageView"
