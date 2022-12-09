@@ -2,6 +2,7 @@ package se.malmo.carlisting;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,12 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder>  {
 
         ViewHolder holder = new ViewHolder(itemView);
 
+        itemView.setOnClickListener(View -> {
+                Intent intent = new Intent(context, DisplayActivity.class);
+                int car_id = Integer.parseInt(holder.txtModel.getTag().toString());
+                intent.putExtra("id", car_id);
+                context.startActivity(intent);
+            });
         return holder;
     }
 
@@ -37,6 +44,7 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder>  {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Car car = cars.get(position);
 
+        holder.txtModel.setTag(car.getId());
         holder.txtModel.setText(car.getModel());
         holder.txtBrand.setText(car.getBrand());
         holder.txtPrice.setText(car.getPrice()+" kr");

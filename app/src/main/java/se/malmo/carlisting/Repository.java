@@ -7,5 +7,5 @@ public interface Repository {
         ArrayList<Car> findAllCars();
         void deleteCar(int id);
         void save(Car car);
-
+        ArrayList<Car> search(String searchFor);
 }

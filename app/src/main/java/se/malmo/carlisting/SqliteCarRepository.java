@@ -16,6 +16,13 @@ public class SqliteCarRepository implements Repository{
     private static SqliteCarRepository instance = null;
     private Context context;
 
+    @Override
+    public ArrayList<Car> search(String searchFor) {
+        ArrayList<Car> findCars = findAllCars();
+        findCars = search(findCars, searchFor);
+        return findCars;
+    }
+
     private SqliteCarRepository(Context context){
         this.context = context;
         sqlite = SqliteHelper.getInstance(context);
@@ -124,6 +131,17 @@ public class SqliteCarRepository implements Repository{
         String[] whereArgs = getWhereArgs(car.getId());
 
         db.update(SqliteHelper.DB_TABLE_NAME, c, "id = ?", whereArgs);
+    }
+
+    private ArrayList<Car> search(ArrayList<Car> carList, String searchingFor){
+        ArrayList<Car> newList = new ArrayList<>();
+        searchingFor = searchingFor.replace(" ", "").toLowerCase();
+        for (int i = 0; i < carList.size(); i++){
+            if ((carList.get(i).getBrand()+carList.get(i).getModel()).toLowerCase().contains(searchingFor)){
+                newList.add(carList.get(i));
+            }
+        }
+        return newList;
     }
 }
 
