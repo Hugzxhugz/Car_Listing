@@ -11,6 +11,11 @@ import android.widget.TextView;
 public class DisplayActivity extends AppCompatActivity {
     Repository carRepository;
     TextView txtModel;
+    TextView txtBrand;
+    TextView txtModelYear;
+    TextView txtMileage;
+    TextView txtPrice;
+    TextView txtDescription;
     Car car;
     Button DeleteBtn;
     Button EditBtn;
@@ -26,9 +31,15 @@ public class DisplayActivity extends AppCompatActivity {
         EditBtn = findViewById(R.id.edit);
 
         txtModel = findViewById(R.id.txtCarModel);
+        txtBrand = findViewById(R.id.txtBrand);
+        txtModelYear = findViewById(R.id.txtYear);
+        txtMileage = findViewById(R.id.txtMileage);
+        txtPrice = findViewById(R.id.txtPrice);
+        txtDescription = findViewById(R.id.txtDescription);
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
         car = getCarFromIntent();
-        txtModel.setText(car.getModel());
+
+        DisplayCar();
 
         DeleteBtn.setOnClickListener(View -> {
             onDeleteBtnClick();
@@ -69,5 +80,15 @@ public class DisplayActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void DisplayCar(){
+
+        txtModel.setText(car.getModel());
+        txtBrand.setText(car.getBrand());
+        txtModelYear.setText(car.getCarModelYear());
+        txtMileage.setText(String.valueOf(car.getMileage()));
+        txtPrice.setText(String.valueOf(car.getPrice()));
+        txtDescription.setText(car.getDescription());
+
+    }
 
 }
