@@ -17,6 +17,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Car Model"
+        android:textSize="28dp"
+
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
@@ -31,6 +33,7 @@
         android:layout_marginTop="45dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
+        android:textSize="20dp"
 
         android:ems="10"
         android:inputType="textPersonName"
@@ -49,6 +52,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:textSize="20dp"
 
         android:inputType="number"
         android:text="Year Model"
@@ -67,6 +71,7 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:textSize="20dp"
 
         android:inputType="number"
         android:text="Mileage"
@@ -84,6 +89,8 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:textSize="20dp"
+
         android:inputType="number"
         android:text="Price"
         android:textAlignment="center"
@@ -103,6 +110,7 @@
         android:paddingRight="6dp"
         android:hint="Description"
         android:background="@drawable/text_box_border"
+        android:textSize="20dp"
 
         android:gravity="start|top"
         android:inputType="textMultiLine"

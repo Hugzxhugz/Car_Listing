@@ -15,10 +15,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="Car Model"
-        android:textSize="28dp"
         android:textAlignment="center"
+        android:textSize="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,10 +34,11 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:text="Car Brand"
-        android:textSize="20dp"
         android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/txtModelYear"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtModel" />
@@ -50,10 +52,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
-        android:textSize="20dp"
+        android:gravity="center"
         android:inputType="number"
         android:text="Year Model"
         android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toEndOf="@+id/txtBrand"
@@ -68,10 +71,11 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
-        android:textSize="20dp"
+        android:gravity="center"
         android:inputType="number"
         android:text="Mileage"
         android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintEnd_toStartOf="@+id/txtPrice"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBrand" />
@@ -85,10 +89,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
-        android:textSize="20dp"
+        android:gravity="center"
         android:inputType="number"
         android:text="Price"
         android:textAlignment="center"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtMileage"
         app:layout_constraintTop_toBottomOf="@+id/txtModelYear" />
@@ -196,12 +201,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMileage"
         app:layout_constraintVertical_bias="1.0" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
 
 
     <Button
