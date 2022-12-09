@@ -1,111 +1,238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="start"
-    android:orientation="vertical"
     tools:context=".DisplayActivity">
 
     <TextView
-        android:id="@+id/txtCarModel"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="Car model"
-        android:textSize="34sp" />
+        android:id="@+id/txtModel"
+        android:layout_width="342dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Car Model"
+        android:textSize="28dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp">
+    <TextView
+        android:id="@+id/txtBrand"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Car Brand"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/txtModelYear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtModel" />
 
-        <TextView
-            android:id="@+id/txtBrand"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="20dp"
-            android:text="Car brand"
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/txtModelYear"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:textSize="20dp"
+        android:inputType="number"
+        android:text="Year Model"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toEndOf="@+id/txtBrand"
+        app:layout_constraintTop_toBottomOf="@+id/txtModel" />
 
-        <TextView
-            android:id="@+id/txtYear"
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="20dp"
-            android:text="Year model"
-            android:textSize="24sp" />
+    <TextView
+        android:id="@+id/txtMileage"
+        android:layout_width="152dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:textSize="20dp"
+        android:inputType="number"
+        android:text="Mileage"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/txtPrice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBrand" />
 
-    </TableRow>
+    <TextView
+        android:id="@+id/txtPrice"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:textSize="20dp"
+        android:inputType="number"
+        android:text="Price"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtMileage"
+        app:layout_constraintTop_toBottomOf="@+id/txtModelYear" />
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="341dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:textSize="20dp"
 
-        <TextView
-            android:id="@+id/txtMileage"
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="20dp"
-            android:text="Mileage"
-            android:textSize="24sp" />
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:hint="Description"
+        android:background="@drawable/text_box_border"
 
-        <TextView
-            android:id="@+id/txtPrice"
-            android:layout_width="140dp"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="20dp"
-            android:text="Price"
-            android:textSize="24sp" />
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+
+    <TextView
+        android:id="@+id/CarModelDisplayLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Car Model"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtModel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/CarBrandDisplayLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:text="Car Brand"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtBrand"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtModel"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/YearModelDisplayLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Year Model"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtModelYear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toEndOf="@+id/CarBrandDisplayLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtModel"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/MileageDisplayLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:text="Mileage"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtMileage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBrand"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/PriceDisplayLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Price"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/MileageDisplayLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtModelYear"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/DescriptionDisplayLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="4dp"
+        android:text="Description"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/txtDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMileage"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="130dp"
+        android:layout_height="137dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditBtn"
+        app:srcCompat="@drawable/background" />
+
+    <Button
+        android:id="@+id/EditBtn"
+        android:layout_width="153dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:text="Edit"
+        app:layout_constraintEnd_toStartOf="@+id/DeleteBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+
+    <Button
+        android:id="@+id/DeleteBtn"
+        android:layout_width="153dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintStart_toEndOf="@+id/EditBtn"
+        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
 
 
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
-
-        <TextView
-            android:id="@+id/txtDescription"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:maxLines="5"
-            android:text="Description"
-            android:textSize="20sp" />
-
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
-
-
-        <Button
-            android:id="@+id/edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:text="Edit"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/delete"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:onClick="onConfirmAddBtnClick"
-            android:text="Delete"
-            android:textSize="20sp" />
-    </TableRow>
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

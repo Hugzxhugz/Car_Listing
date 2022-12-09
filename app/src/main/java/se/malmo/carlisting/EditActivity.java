@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
     Repository carRepository;
@@ -31,12 +30,12 @@ public class EditActivity extends AppCompatActivity {
 
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
-        CarModelEditBox = findViewById(R.id.CarModelEditBox);
-        CarBrandEditBox = findViewById(R.id.CarBrandEditBox);
-        YearModelEditBox= findViewById(R.id.YearModelEditBox);
-        MileageEditBox = findViewById(R.id.MileageEditBox);
-        PriceEditBox = findViewById(R.id.PriceEditBox);
-        DescriptionEditBox = findViewById(R.id.DescriptionEditBox);
+        CarModelEditBox = findViewById(R.id.txtModel);
+        CarBrandEditBox = findViewById(R.id.txtBrand);
+        YearModelEditBox= findViewById(R.id.txtModelYear);
+        MileageEditBox = findViewById(R.id.txtMileage);
+        PriceEditBox = findViewById(R.id.txtPrice);
+        DescriptionEditBox = findViewById(R.id.txtDescription);
         updateBtn = findViewById(R.id.UpdateBtn);
 
         car = getCarFromIntent();

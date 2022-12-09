@@ -27,12 +27,12 @@ public class DisplayActivity extends AppCompatActivity {
 
         this.setTitle("Car Display");
 
-        DeleteBtn = findViewById(R.id.delete);
-        EditBtn = findViewById(R.id.edit);
+        DeleteBtn = findViewById(R.id.DeleteBtn);
+        EditBtn = findViewById(R.id.EditBtn);
 
-        txtModel = findViewById(R.id.txtCarModel);
+        txtModel = findViewById(R.id.txtModel);
         txtBrand = findViewById(R.id.txtBrand);
-        txtModelYear = findViewById(R.id.txtYear);
+        txtModelYear = findViewById(R.id.txtModelYear);
         txtMileage = findViewById(R.id.txtMileage);
         txtPrice = findViewById(R.id.txtPrice);
         txtDescription = findViewById(R.id.txtDescription);
