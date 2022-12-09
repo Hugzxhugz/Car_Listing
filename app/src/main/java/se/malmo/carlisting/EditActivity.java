@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
     Repository carRepository;
@@ -74,8 +75,8 @@ public class EditActivity extends AppCompatActivity {
         car.setMileage(Integer.parseInt(MileageEditBox.getText().toString()));
         car.setPrice(configPrice(PriceEditBox.getText().toString()));
         car.setDescription(DescriptionEditBox.getText().toString());
-
         carRepository.save(car);
+
     }
 
     public int configPrice(String price){

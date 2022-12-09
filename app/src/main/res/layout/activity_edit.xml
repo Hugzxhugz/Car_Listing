@@ -68,7 +68,7 @@
         android:background="@drawable/text_box_border"
         android:ems="10"
 
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:text="Mileage"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/PriceEditBox"

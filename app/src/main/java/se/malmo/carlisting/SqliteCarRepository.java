@@ -84,7 +84,12 @@ public class SqliteCarRepository implements Repository{
     public void deleteCar(int id) {
         SQLiteDatabase db = sqlite.getWritableDatabase();
         String[] args = getWhereArgs(id);
-        db.delete(SqliteHelper.DB_TABLE_NAME, "id = ?", args);
+        long result = db.delete(SqliteHelper.DB_TABLE_NAME, "id = ?", args);
+        if (result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override
@@ -92,7 +97,7 @@ public class SqliteCarRepository implements Repository{
         if(car.getId() == 0)
             insertCar(car);
         else
-            updateBook(car);
+            updateCar(car);
     }
 
     private void insertCar(Car car){
@@ -102,7 +107,7 @@ public class SqliteCarRepository implements Repository{
         if (result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "success", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -124,13 +129,18 @@ public class SqliteCarRepository implements Repository{
         return c;
     }
 
-    private void updateBook(Car car){
+    private void updateCar(Car car){
         SQLiteDatabase db = sqlite.getWritableDatabase();
 
         ContentValues c = getContentValues(car);
         String[] whereArgs = getWhereArgs(car.getId());
 
-        db.update(SqliteHelper.DB_TABLE_NAME, c, "id = ?", whereArgs);
+        long result = db.update(SqliteHelper.DB_TABLE_NAME, c, "id = ?", whereArgs);
+        if (result == -1){
+            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private ArrayList<Car> search(ArrayList<Car> carList, String searchingFor){
