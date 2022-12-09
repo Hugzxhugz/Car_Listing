@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class DisplayActivity extends AppCompatActivity {
     Repository carRepository;
     TextView txtModel;
     Car car;
+    Button DeleteBtn;
+    Button EditBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +22,17 @@ public class DisplayActivity extends AppCompatActivity {
 
         this.setTitle("Car Display");
 
+        DeleteBtn = findViewById(R.id.delete);
+        EditBtn = findViewById(R.id.edit);
+
         txtModel = findViewById(R.id.txtCarModel);
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
         car = getCarFromIntent();
         txtModel.setText(car.getModel());
+
+        DeleteBtn.setOnClickListener(View -> {
+            onDeleteBtnClick();
+        });
     }
 
     private Car getCarFromIntent(){
@@ -32,4 +43,18 @@ public class DisplayActivity extends AppCompatActivity {
 
         return car;
     }
+
+    public void onDeleteBtnClick(){
+
+        Car car = getCarFromIntent();
+        carRepository.deleteCar(car.getId());
+
+        Intent intent = new Intent(this,MainActivity.class);
+        startActivity(intent);
+
+
+
+    }
+
+
 }
