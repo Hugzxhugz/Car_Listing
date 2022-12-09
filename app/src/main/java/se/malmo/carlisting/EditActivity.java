@@ -17,14 +17,13 @@ public class EditActivity extends AppCompatActivity {
             MileageEditBox,
             PriceEditBox,
             DescriptionEditBox;
-    Repository sqlrepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        sqlrepository = SqliteCarRepository.getInstance(getApplicationContext());
+        carRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
         CarModelEditBox = findViewById(R.id.CarModelEditBox);
         CarBrandEditBox = findViewById(R.id.CarBrandEditBox);
@@ -53,7 +52,7 @@ public class EditActivity extends AppCompatActivity {
         CarBrandEditBox.setText(car.getBrand());
         YearModelEditBox.setText(car.getCarModelYear());
         MileageEditBox.setText(String.valueOf(car.getMileage()));
-        PriceEditBox.setText(String.valueOf(car.getPrice()));
+        PriceEditBox.setText(String.valueOf(car.getPrice())+" kr");
         DescriptionEditBox.setText(car.getDescription());
     }
 }

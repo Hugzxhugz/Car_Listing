@@ -62,16 +62,11 @@ public class DisplayActivity extends AppCompatActivity {
     }
 
     public void onEditBtnClick(){
-
         Car car = getCarFromIntent();
-        carRepository.deleteCar(car.getId());
 
         Intent intent = new Intent(this,EditActivity.class);
         intent.putExtra("id",car.getId());
         startActivity(intent);
-
-
-
     }
 
 
