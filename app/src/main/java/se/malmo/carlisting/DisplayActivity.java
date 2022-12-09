@@ -86,7 +86,7 @@ public class DisplayActivity extends AppCompatActivity {
         txtBrand.setText(car.getBrand());
         txtModelYear.setText(car.getCarModelYear());
         txtMileage.setText(String.valueOf(car.getMileage()));
-        txtPrice.setText(String.valueOf(car.getPrice()));
+        txtPrice.setText(String.valueOf(car.getPrice())+" kr");
         txtDescription.setText(car.getDescription());
 
     }
