@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="onConfirmAddBtnClick"
     tools:context=".AddCarActivity">
 
     <EditText
@@ -15,8 +16,8 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Car Model"
+        android:inputType="textPersonName"
         android:textAlignment="center"
         android:textSize="28dp"
 
@@ -35,8 +36,8 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Car Brand"
+        android:inputType="textPersonName"
         android:textAlignment="center"
         android:textSize="20dp"
         app:autoSizeTextType="uniform"
@@ -53,11 +54,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:hint="Year Model"
+        android:inputType="number"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:autoSizeTextType="uniform"
-        android:inputType="number"
-        android:hint="Year Model"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toEndOf="@+id/CarBrandInputBox"
@@ -72,11 +73,11 @@
         android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:hint="Mileage"
+        android:inputType="number"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:autoSizeTextType="uniform"
-        android:inputType="number"
-        android:hint="Mileage"
-        android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/PriceInputBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarBrandInputBox" />
@@ -90,11 +91,11 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:ems="10"
+        android:hint="Price"
+        android:inputType="number"
+        android:textAlignment="center"
         android:textSize="20dp"
         app:autoSizeTextType="uniform"
-        android:inputType="number"
-        android:hint="Price"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MileageInputBox"
         app:layout_constraintTop_toBottomOf="@+id/YearModelInputBox" />
@@ -106,15 +107,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="45dp"
         android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
         android:ems="10"
+        android:gravity="start|top"
+        android:hint="Description"
+        android:inputType="textMultiLine"
         android:paddingLeft="6dp"
         android:paddingRight="6dp"
-        android:hint="Description"
-        android:background="@drawable/text_box_border"
         android:textSize="20dp"
         app:autoSizeTextType="uniform"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/PriceInputBox" />
@@ -141,13 +142,13 @@
         android:text="Car Model"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/CarModelInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:autoSizeTextType="uniform" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/CarBrandDisplayLabel"
@@ -157,11 +158,11 @@
         android:text="Car Brand"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/CarBrandInputBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarModelInputBox"
-        app:layout_constraintVertical_bias="1.0"
-        app:autoSizeTextType="uniform" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/YearModelDisplayLabel"
@@ -170,13 +171,13 @@
         android:text="Year Model"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/YearModelInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/CarBrandDisplayLabel"
         app:layout_constraintTop_toBottomOf="@+id/CarModelInputBox"
-        app:layout_constraintVertical_bias="1.0"
-        app:autoSizeTextType="uniform" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/MileageDisplayLabel"
@@ -186,11 +187,11 @@
         android:text="Mileage"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/MileageInputBox"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CarBrandInputBox"
-        app:layout_constraintVertical_bias="1.0"
-        app:autoSizeTextType="uniform" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/PriceDisplayLabel"
@@ -199,13 +200,13 @@
         android:text="Price"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/PriceInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toEndOf="@+id/MileageDisplayLabel"
         app:layout_constraintTop_toBottomOf="@+id/YearModelInputBox"
-        app:layout_constraintVertical_bias="1.0"
-        app:autoSizeTextType="uniform"/>
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/DescriptionDisplayLabel"
@@ -215,13 +216,13 @@
         android:text="Description"
         android:textSize="18dp"
         android:textStyle="bold"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/DescriptionInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MileageInputBox"
-        app:layout_constraintVertical_bias="1.0"
-        app:autoSizeTextType="uniform" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView"
