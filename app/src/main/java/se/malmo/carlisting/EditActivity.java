@@ -8,22 +8,29 @@ import android.widget.EditText;
 
 public class EditActivity extends AppCompatActivity {
 
-    Button update_button;
-    EditText car_model_edit,
-            car_brand_edit,
-            year_model_edit,
-            mileage_edit,
-            price_edit,
-            description_edit;
+    Button updateBtn;
+    EditText CarModelEditBox,
+            CarBrandEditBox,
+            YearModelEditBox,
+            MileageEditBox,
+            PriceEditBox,
+            DescriptionEditBox;
     Repository sqlrepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
+
+        sqlrepository = SqliteCarRepository.getInstance(getApplicationContext());
+
+        CarModelEditBox = findViewById(R.id.CarModelEditBox);
+        CarBrandEditBox = findViewById(R.id.CarBrandEditBox);
+        YearModelEditBox= findViewById(R.id.YearModelEditBox);
+        MileageEditBox = findViewById(R.id.MileageEditBox);
+        PriceEditBox = findViewById(R.id.PriceEditBox);
+        DescriptionEditBox = findViewById(R.id.DescriptionEditBox);
+        updateBtn = findViewById(R.id.UpdateBtn);
     }
-
-
-
 
 }
