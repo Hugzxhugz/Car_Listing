@@ -10,7 +10,6 @@ import android.widget.EditText;
 
 public class EditActivity extends AppCompatActivity {
     Repository carRepository;
-    Repository sqlRepository;
 
     Car car;
     Button updateBtn;
@@ -37,7 +36,6 @@ public class EditActivity extends AppCompatActivity {
         updateBtn = findViewById(R.id.UpdateBtn);
 
         car = getCarFromIntent();
-        sqlRepository = SqliteCarRepository.getInstance(getApplicationContext());
         displayEditCar();
     }
 
@@ -47,8 +45,6 @@ public class EditActivity extends AppCompatActivity {
         int car_id = intent.getIntExtra("id",0);
 
         Car car = carRepository.findCarById(car_id);
-
-
 
         return car;
     }
@@ -62,7 +58,7 @@ public class EditActivity extends AppCompatActivity {
         DescriptionEditBox.setText(car.getDescription());
     }
 
-    /*  button function crashes app
+    //  button function crashes app
     public void onUpdateBtnClick(View view){
         updateCar();
         Intent intent = new Intent(this,MainActivity.class);
@@ -71,13 +67,24 @@ public class EditActivity extends AppCompatActivity {
 
     private void updateCar(){
         Car car = new Car();
+        car.setId(this.car.getId());
         car.setModel(CarModelEditBox.getText().toString());
         car.setBrand(CarBrandEditBox.getText().toString());
         car.setModelYear(YearModelEditBox.getText().toString());
         car.setMileage(Integer.parseInt(MileageEditBox.getText().toString()));
-        car.setPrice(Integer.parseInt(PriceEditBox.getText().toString()));
+        car.setPrice(configPrice(PriceEditBox.getText().toString()));
         car.setDescription(DescriptionEditBox.getText().toString());
 
-        sqlRepository.save(car);
-    }*/
+        carRepository.save(car);
+    }
+
+    public int configPrice(String price){
+        price = price.replace(" ", "");
+        price = price.replace("kr", "");
+
+
+
+        return Integer.parseInt(price);
+    }
+
 }
