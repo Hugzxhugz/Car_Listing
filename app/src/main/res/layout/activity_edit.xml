@@ -6,4 +6,205 @@
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
+    <EditText
+        android:id="@+id/CarModelEditBox"
+        android:layout_width="342dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Car Model"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/CarBrandEditBox"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/text_box_border"
+
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Car Brand"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/YearModelEditBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelEditBox" />
+
+    <EditText
+        android:id="@+id/YearModelEditBox"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+
+        android:inputType="number"
+        android:text="Year Model"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toEndOf="@+id/CarBrandEditBox"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelEditBox" />
+
+    <EditText
+        android:id="@+id/MileageEditBox"
+        android:layout_width="152dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+
+        android:inputType="textPersonName"
+        android:text="Mileage"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toStartOf="@+id/PriceEditBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarBrandEditBox" />
+
+    <EditText
+        android:id="@+id/PriceEditBox"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/text_box_border"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Price"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MileageEditBox"
+        app:layout_constraintTop_toBottomOf="@+id/YearModelEditBox" />
+
+    <EditText
+        android:id="@+id/DescriptionEditBox"
+        android:layout_width="341dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Description"
+        android:background="@drawable/text_box_border"
+
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PriceEditBox" />
+
+    <Button
+        android:id="@+id/UpdateBtn"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        android:text="UPDATE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionEditBox"
+        app:layout_constraintVertical_bias="0.111" />
+
+    <TextView
+        android:id="@+id/CarModelEditLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Car Model"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CarModelEditBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/CarBrandEditLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:text="Car Brand"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/CarBrandEditBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelEditBox"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/YearModelEditLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Year Model"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/YearModelEditBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toEndOf="@+id/CarBrandEditLabel"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelEditBox"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/MileageEditLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="32dp"
+        android:text="Mileage"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/MileageEditBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CarBrandEditBox"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/PriceEditLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Price"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/PriceEditBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toEndOf="@+id/MileageEditLabel"
+        app:layout_constraintTop_toBottomOf="@+id/YearModelEditBox"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/DescriptionEditLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="4dp"
+        android:text="Description"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/DescriptionEditBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MileageEditBox"
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

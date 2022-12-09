@@ -45,6 +45,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onEditBtnClick(View view){
+
+        Intent intent = new Intent(MainActivity.this,EditActivity.class);
+        startActivity(intent);
+
+    }
 
 //test
 }
