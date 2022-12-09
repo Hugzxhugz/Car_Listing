@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Car Listing</string>
+    <string name="car_model">Car model</string>
+    <string name="car_brand">Car brand</string>
+    <string name="year_model">Year model</string>
+    <string name="mileage">Mileage</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
 </resources>
