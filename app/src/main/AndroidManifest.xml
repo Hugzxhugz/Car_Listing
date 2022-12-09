@@ -30,7 +30,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".addCarActivty"
+            android:name=".AddCarActivity"
             android:exported="false"
             android:label="Add Car"
             android:parentActivityName=".MainActivity">

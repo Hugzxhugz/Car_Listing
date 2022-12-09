@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAddButtonClick(View view){
 
-        Intent intent = new Intent(MainActivity.this,addCarActivty.class);
+        Intent intent = new Intent(MainActivity.this, AddCarActivity.class);
         startActivity(intent);
 
 }

@@ -7,7 +7,7 @@
     tools:context=".EditActivity">
 
     <EditText
-        android:id="@+id/txtModel"
+        android:id="@+id/CarModelInputBox"
         android:layout_width="342dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -27,7 +27,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtBrand"
+        android:id="@+id/CarBrandInputBox"
         android:layout_width="155dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -40,12 +40,12 @@
         android:inputType="textPersonName"
         android:text="Car Brand"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/txtModelYear"
+        app:layout_constraintEnd_toStartOf="@+id/YearModelInputBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtModel" />
+        app:layout_constraintTop_toBottomOf="@+id/CarModelInputBox" />
 
     <EditText
-        android:id="@+id/txtModelYear"
+        android:id="@+id/YearModelInputBox"
         android:layout_width="155dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -60,11 +60,11 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
-        app:layout_constraintStart_toEndOf="@+id/txtBrand"
-        app:layout_constraintTop_toBottomOf="@+id/txtModel" />
+        app:layout_constraintStart_toEndOf="@+id/CarBrandInputBox"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelInputBox" />
 
     <EditText
-        android:id="@+id/txtMileage"
+        android:id="@+id/MileageInputBox"
         android:layout_width="152dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
@@ -77,12 +77,12 @@
         android:inputType="number"
         android:text="Mileage"
         android:textAlignment="center"
-        app:layout_constraintEnd_toStartOf="@+id/txtPrice"
+        app:layout_constraintEnd_toStartOf="@+id/PriceInputBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBrand" />
+        app:layout_constraintTop_toBottomOf="@+id/CarBrandInputBox" />
 
     <EditText
-        android:id="@+id/txtPrice"
+        android:id="@+id/PriceInputBox"
         android:layout_width="155dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
@@ -96,11 +96,11 @@
         android:text="Price"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtMileage"
-        app:layout_constraintTop_toBottomOf="@+id/txtModelYear" />
+        app:layout_constraintStart_toEndOf="@+id/MileageInputBox"
+        app:layout_constraintTop_toBottomOf="@+id/YearModelInputBox" />
 
     <EditText
-        android:id="@+id/txtDescription"
+        android:id="@+id/DescriptionInputBox"
         android:layout_width="341dp"
         android:layout_height="81dp"
         android:layout_marginStart="16dp"
@@ -117,10 +117,10 @@
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+        app:layout_constraintTop_toBottomOf="@+id/PriceInputBox" />
 
     <Button
-        android:id="@+id/UpdateBtn"
+        android:id="@+id/AddBtn"
         android:layout_width="297dp"
         android:layout_height="64dp"
         android:layout_marginStart="32dp"
@@ -132,7 +132,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/DescriptionInputBox" />
 
     <TextView
         android:id="@+id/CarModelDisplayLabel"
@@ -141,7 +141,7 @@
         android:text="Car Model"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtModel"
+        app:layout_constraintBottom_toTopOf="@+id/CarModelInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
@@ -157,9 +157,9 @@
         android:text="Car Brand"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtBrand"
+        app:layout_constraintBottom_toTopOf="@+id/CarBrandInputBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtModel"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelInputBox"
         app:layout_constraintVertical_bias="1.0"
         app:autoSizeTextType="uniform" />
 
@@ -170,11 +170,11 @@
         android:text="Year Model"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtModelYear"
+        app:layout_constraintBottom_toTopOf="@+id/YearModelInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toEndOf="@+id/CarBrandDisplayLabel"
-        app:layout_constraintTop_toBottomOf="@+id/txtModel"
+        app:layout_constraintTop_toBottomOf="@+id/CarModelInputBox"
         app:layout_constraintVertical_bias="1.0"
         app:autoSizeTextType="uniform" />
 
@@ -186,9 +186,9 @@
         android:text="Mileage"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtMileage"
+        app:layout_constraintBottom_toTopOf="@+id/MileageInputBox"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBrand"
+        app:layout_constraintTop_toBottomOf="@+id/CarBrandInputBox"
         app:layout_constraintVertical_bias="1.0"
         app:autoSizeTextType="uniform" />
 
@@ -199,11 +199,11 @@
         android:text="Price"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtPrice"
+        app:layout_constraintBottom_toTopOf="@+id/PriceInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toEndOf="@+id/MileageDisplayLabel"
-        app:layout_constraintTop_toBottomOf="@+id/txtModelYear"
+        app:layout_constraintTop_toBottomOf="@+id/YearModelInputBox"
         app:layout_constraintVertical_bias="1.0"
         app:autoSizeTextType="uniform"/>
 
@@ -215,11 +215,11 @@
         android:text="Description"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/txtDescription"
+        app:layout_constraintBottom_toTopOf="@+id/DescriptionInputBox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.119"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtMileage"
+        app:layout_constraintTop_toBottomOf="@+id/MileageInputBox"
         app:layout_constraintVertical_bias="1.0"
         app:autoSizeTextType="uniform" />
 
@@ -233,7 +233,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/UpdateBtn"
+        app:layout_constraintTop_toBottomOf="@+id/AddBtn"
         app:srcCompat="@drawable/background" />
 
 

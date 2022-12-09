@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -33,12 +32,12 @@ public class DisplayActivity extends AppCompatActivity {
         DeleteBtn = findViewById(R.id.DeleteBtn);
         EditBtn = findViewById(R.id.EditBtn);
 
-        txtModel = findViewById(R.id.txtModel);
-        txtBrand = findViewById(R.id.txtBrand);
-        txtModelYear = findViewById(R.id.txtModelYear);
-        txtMileage = findViewById(R.id.txtMileage);
-        txtPrice = findViewById(R.id.txtPrice);
-        txtDescription = findViewById(R.id.txtDescription);
+        txtModel = findViewById(R.id.CarModelInputBox);
+        txtBrand = findViewById(R.id.CarBrandInputBox);
+        txtModelYear = findViewById(R.id.YearModelInputBox);
+        txtMileage = findViewById(R.id.MileageInputBox);
+        txtPrice = findViewById(R.id.PriceInputBox);
+        txtDescription = findViewById(R.id.DescriptionInputBox);
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
         car = getCarFromIntent();
 
