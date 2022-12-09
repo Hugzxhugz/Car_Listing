@@ -37,10 +37,10 @@
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.068"
+                    app:layout_constraintHorizontal_bias="0.403"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.146" />
+                    app:layout_constraintVertical_bias="0.15" />
 
                 <TextView
                     android:id="@+id/car_model_label"
@@ -51,15 +51,15 @@
                     android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.114"
+                    app:layout_constraintHorizontal_bias="0.699"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/car_brand_label"
-                    app:layout_constraintVertical_bias="1.0" />
+                    app:layout_constraintVertical_bias="0.875" />
 
                 <TextView
                     android:id="@+id/price_label"
-                    android:layout_width="83dp"
-                    android:layout_height="24dp"
+                    android:layout_width="93dp"
+                    android:layout_height="31dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="16dp"
                     android:text="Price"
@@ -71,10 +71,9 @@
                     android:id="@+id/imageView2"
                     android:layout_width="79dp"
                     android:layout_height="60dp"
-                    android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/recycler_view_icon" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
