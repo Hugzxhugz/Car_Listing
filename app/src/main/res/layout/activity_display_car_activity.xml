@@ -10,9 +10,7 @@
         android:id="@+id/CarModelDisplayBox"
         android:layout_width="342dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="68dp"
         android:background="@drawable/text_box_border"
         android:backgroundTint="#CEEBEF"
         android:ems="10"
@@ -22,7 +20,7 @@
         android:textAlignment="center"
         android:textSize="28dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -30,9 +28,7 @@
         android:id="@+id/CarBrandDisplayBox"
         android:layout_width="155dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:backgroundTint="#CEEBEF"
         android:ems="10"
@@ -49,9 +45,7 @@
         android:id="@+id/YearModelDisplayBox"
         android:layout_width="155dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:backgroundTint="#CEEBEF"
         android:ems="10"
@@ -69,9 +63,7 @@
         android:id="@+id/MileageDisplayBox"
         android:layout_width="152dp"
         android:layout_height="48dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="8dp"
         android:background="@drawable/text_box_border"
         android:backgroundTint="#CEEBEF"
         android:ems="10"
@@ -88,9 +80,7 @@
         android:id="@+id/PriceDisplayBox"
         android:layout_width="155dp"
         android:layout_height="48dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:backgroundTint="#CEEBEF"
         android:ems="10"
@@ -107,9 +97,7 @@
         android:id="@+id/DescriptionDisplayBox"
         android:layout_width="341dp"
         android:layout_height="81dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="45dp"
-        android:layout_marginEnd="16dp"
         android:background="@drawable/text_box_border"
         android:backgroundTint="#CEEBEF"
 
@@ -133,24 +121,21 @@
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/CarModelDisplayBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/CarModelDisplayBox"
+        app:layout_constraintHorizontal_bias="0.009"
+        app:layout_constraintStart_toStartOf="@+id/CarModelDisplayBox" />
 
     <TextView
         android:id="@+id/CarBrandDisplayLabel"
         android:layout_width="135dp"
         android:layout_height="25dp"
-        android:layout_marginStart="32dp"
         android:text="@string/car_brand"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/CarBrandDisplayBox"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CarModelDisplayBox"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/CarBrandDisplayBox"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/CarBrandDisplayBox" />
 
     <TextView
         android:id="@+id/YearModelDisplayLabel"
@@ -160,24 +145,21 @@
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/YearModelDisplayBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toEndOf="@+id/CarBrandDisplayLabel"
-        app:layout_constraintTop_toBottomOf="@+id/CarModelDisplayBox"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/YearModelDisplayBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/YearModelDisplayBox" />
 
     <TextView
         android:id="@+id/MileageDisplayLabel"
         android:layout_width="135dp"
         android:layout_height="25dp"
-        android:layout_marginStart="32dp"
         android:text="@string/mileage"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/MileageDisplayBox"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CarBrandDisplayBox"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/MileageDisplayBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/MileageDisplayBox" />
 
     <TextView
         android:id="@+id/PriceDisplayLabel"
@@ -187,35 +169,28 @@
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/PriceDisplayBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toEndOf="@+id/MileageDisplayLabel"
-        app:layout_constraintTop_toBottomOf="@+id/YearModelDisplayBox"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="@+id/PriceDisplayBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/PriceDisplayBox" />
+
 
     <TextView
         android:id="@+id/DescriptionDisplayLabel"
         android:layout_width="135dp"
         android:layout_height="25dp"
-        android:layout_marginTop="4dp"
         android:text="@string/description"
         android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/DescriptionDisplayBox"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MileageDisplayBox"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintEnd_toEndOf="@+id/DescriptionDisplayBox"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/DescriptionDisplayBox" />
 
     <Button
         android:id="@+id/EditBtn"
         android:layout_width="153dp"
         android:layout_height="64dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-condensed"
 
@@ -229,9 +204,7 @@
         android:id="@+id/DeleteBtn"
         android:layout_width="153dp"
         android:layout_height="64dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:fontFamily="sans-serif-condensed"
 
