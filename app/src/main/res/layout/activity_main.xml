@@ -49,25 +49,27 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/text_box_border"
-        android:backgroundTint="@color/white"
+        android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="5dp"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/txtMainUsername"
-            android:layout_width="176dp"
-            android:layout_height="42dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="ID: Username"
+            android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtMainBalance"
-            android:layout_width="181dp"
-            android:layout_height="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Balance"
+            android:textColor="@color/white"
             android:textSize="34sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtMainUsername" />

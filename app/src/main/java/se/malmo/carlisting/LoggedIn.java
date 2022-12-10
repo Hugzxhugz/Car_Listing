@@ -6,6 +6,7 @@ public class LoggedIn {
     private static boolean loggedIn;
     private static String username;
     private static int balance;
+    private static int accountId;
     private static LoggedIn instance = null;
 
     public static LoggedIn getInstance() {
@@ -27,6 +28,7 @@ public class LoggedIn {
         loggedIn = true;
         username = acc.getName();
         balance = acc.getBalance();
+        accountId = acc.getId();
     }
 
     public static boolean isLoggedIn() {

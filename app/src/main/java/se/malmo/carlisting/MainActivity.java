@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtBalance;
     String username;
     int balance;
+    LoggedIn loggedIn;
 
     Repository sqlRepository;
 
@@ -49,7 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         setCarAdaptor(sqlRepository.findAllCars());
 
-        getAccountInformationFromIntent();
+        loggedIn = LoggedIn.getInstance();
+        getAccountInformation();
         displayAccountInformation();
 
         editTextSearch.addTextChangedListener(new TextWatcher() {
@@ -83,10 +85,12 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
 
-    public void getAccountInformationFromIntent(){
-        Intent intent = getIntent();
-        username = intent.getStringExtra("username");
-        balance = intent.getIntExtra("balance", 0);
+    public void getAccountInformation(){
+       // Intent intent = getIntent();
+       // username = intent.getStringExtra("username");
+       // balance = intent.getIntExtra("balance", 0);
+        username = loggedIn.getUsername();
+        balance = loggedIn.getBalance();
     }
 
     public void displayAccountInformation(){

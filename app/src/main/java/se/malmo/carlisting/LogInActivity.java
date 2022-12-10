@@ -37,15 +37,15 @@ public class LogInActivity extends AppCompatActivity {
     private void logIn(){
         String name = username.getText().toString();
         String pass = password.getText().toString();
-
+        LoggedIn.setInstance(new LoggedIn());
         log_In.logIn(userRepo.findAllAccounts(), name, pass);
         log_In = LoggedIn.getInstance();
         if(!LoggedIn.isLoggedIn()){
             Toast.makeText(this, "Log in failed", Toast.LENGTH_SHORT).show();
         } else{
             Intent intent = new Intent(this, MainActivity.class);
-            intent.putExtra("username", log_In.getUsername());
-            intent.putExtra("balance", log_In.getBalance());
+          //  intent.putExtra("username", log_In.getUsername());
+          //  intent.putExtra("balance", log_In.getBalance());
             startActivity(intent);
         }
     }
