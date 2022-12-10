@@ -126,7 +126,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
-        android:backgroundTint="@android:color/holo_blue_bright"
+        android:backgroundTint="@android:color/holo_blue_dark"
         android:onClick="onUpdateBtnClick"
         android:text="@string/update"
 
