@@ -27,8 +27,6 @@ public class DisplayActivity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
 
 
-        this.setTitle("Car Display");
-
         DeleteBtn = findViewById(R.id.DeleteBtn);
         EditBtn = findViewById(R.id.EditBtn);
 
