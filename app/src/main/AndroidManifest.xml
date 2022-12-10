@@ -15,7 +15,7 @@
         <activity
             android:name=".EditActivity"
             android:exported="false"
-            android:label="Edit Car"
+            android:label="@string/edit_menu_name"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
@@ -24,6 +24,7 @@
         <activity
             android:name=".DisplayActivity"
             android:exported="false"
+            android:label="@string/display_menu_name"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
@@ -32,7 +33,7 @@
         <activity
             android:name=".AddCarActivity"
             android:exported="false"
-            android:label="Add Car"
+            android:label="@string/add_menu_name"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.app.lib_name"
@@ -42,7 +43,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:icon="@drawable/ic_car"
-            android:label="Car Listing">
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

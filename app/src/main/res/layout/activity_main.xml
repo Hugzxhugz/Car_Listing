@@ -20,7 +20,7 @@
             android:drawableRight="@drawable/ic_search"
             android:drawablePadding="20dp"
             android:ems="10"
-            android:hint="Search for car model or brand"
+            android:hint="@string/message_searchbar"
             android:inputType="textPersonName"
             android:textColorHighlight="@color/black"
             android:textSize="24sp" />
