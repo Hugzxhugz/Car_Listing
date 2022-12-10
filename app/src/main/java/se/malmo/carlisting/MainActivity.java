@@ -12,6 +12,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextSearch;
     RecyclerView recyclerView;
     FloatingActionButton add_button;
+    TextView txtUsername;
+    TextView txtBalance;
+    String username;
+    int balance;
 
     Repository sqlRepository;
 
@@ -37,10 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
         add_button = findViewById(R.id.addBtn);
+        txtBalance = findViewById(R.id.txtMainBalance);
+        txtUsername = findViewById(R.id.txtMainUsername);
 
         sqlRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
         setCarAdaptor(sqlRepository.findAllCars());
+
+        getAccountInformationFromIntent();
+        displayAccountInformation();
 
         editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -71,5 +81,16 @@ public class MainActivity extends AppCompatActivity {
         carAdapter = new CarAdapter(this, showCars);
         recyclerView.setAdapter(carAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+    }
+
+    public void getAccountInformationFromIntent(){
+        Intent intent = getIntent();
+        username = intent.getStringExtra("username");
+        balance = intent.getIntExtra("balance", 0);
+    }
+
+    public void displayAccountInformation(){
+        txtUsername.setText(username);
+        txtBalance.setText(String.valueOf(balance)+" kr");
     }
 }

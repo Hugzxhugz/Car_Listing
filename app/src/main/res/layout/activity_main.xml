@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -17,10 +18,10 @@
             android:id="@+id/tbxSearch"
             android:layout_width="368dp"
             android:layout_height="65dp"
-            android:ems="10"
-            android:hint="Search for car model or brand"
             android:drawableRight="@drawable/ic_search"
             android:drawablePadding="20dp"
+            android:ems="10"
+            android:hint="Search for car model or brand"
             android:inputType="textPersonName"
             android:textSize="24sp" />
 
@@ -28,6 +29,7 @@
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="fill_parent" />
+
     </LinearLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -41,5 +43,35 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_input_add" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/text_box_border"
+        android:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txtMainUsername"
+            android:layout_width="176dp"
+            android:layout_height="42dp"
+            android:text="ID: Username"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtMainBalance"
+            android:layout_width="181dp"
+            android:layout_height="40dp"
+            android:text="Balance"
+            android:textSize="34sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMainUsername" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
