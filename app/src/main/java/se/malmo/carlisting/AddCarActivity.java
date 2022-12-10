@@ -41,7 +41,7 @@ public class AddCarActivity extends AppCompatActivity {
 
     public void onConfirmAddBtnClick(View view){
         addCar();
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
     }
 

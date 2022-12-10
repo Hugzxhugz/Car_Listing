@@ -8,68 +8,52 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    EditText editTextSearch;
-    RecyclerView recyclerView;
-    FloatingActionButton add_button;
 
-    Repository sqlRepository;
+    private static int SPLASH_SCREEN = 3000;
 
-    CarAdapter carAdapter;
+    Animation topAnim, bottomAnim;
+    ImageView carLogo, carSlogan;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        ;
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
 
-        editTextSearch = findViewById(R.id.tbxSearch);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 
-        recyclerView = findViewById(R.id.recycler_view);
-        add_button = findViewById(R.id.addBtn);
+        carLogo = findViewById(R.id.carLogo);
+        carSlogan = findViewById(R.id.carSlogan);
 
-        sqlRepository = SqliteCarRepository.getInstance(getApplicationContext());
+        carLogo.setAnimation(topAnim);
+        carSlogan.setAnimation(bottomAnim);
 
-        setCarAdaptor(sqlRepository.findAllCars());
-
-        editTextSearch.addTextChangedListener(new TextWatcher() {
+        new Handler().postDelayed((new Runnable() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+            public void run() {
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String searched = editTextSearch.getText().toString();
-                if(!searched.isEmpty()) setCarAdaptor(sqlRepository.search(searched));
-                else setCarAdaptor(sqlRepository.findAllCars());
-            }
-            @Override
-            public void afterTextChanged(Editable editable) {
+        }), SPLASH_SCREEN);
 
-            }
-        });
-    }
-
-
-    public void onAddButtonClick(View view){
-
-        Intent intent = new Intent(MainActivity.this, AddCarActivity.class);
-        startActivity(intent);
-
-}
-    public void setCarAdaptor(ArrayList<Car> showCars){
-        carAdapter = new CarAdapter(this, showCars);
-        recyclerView.setAdapter(carAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
     }
 }

@@ -64,7 +64,7 @@ public class EditActivity extends AppCompatActivity {
     //  button function crashes app
     public void onUpdateBtnClick(View view){
         updateCar();
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this,HomeActivity.class);
         startActivity(intent);
     }
 
