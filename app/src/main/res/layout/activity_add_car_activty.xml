@@ -22,7 +22,7 @@
         android:inputType="textPersonName"
 
         android:textAlignment="center"
-        android:textSize="28dp"
+        android:textSize="24sp"
         app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.449"
@@ -139,7 +139,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:fontFamily="sans-serif-medium"
+        android:fontFamily="sans-serif-condensed"
         android:onClick="onConfirmAddBtnClick"
 
         android:text="@string/add"

@@ -217,8 +217,9 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="@string/edit"
+        android:fontFamily="sans-serif-condensed"
 
+        android:text="@string/edit"
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/DeleteBtn"
         app:layout_constraintStart_toStartOf="parent"
@@ -232,8 +233,9 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="@string/delete"
+        android:fontFamily="sans-serif-condensed"
 
+        android:text="@string/delete"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.63"
