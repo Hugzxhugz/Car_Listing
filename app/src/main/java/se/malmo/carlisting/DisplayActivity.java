@@ -32,12 +32,12 @@ public class DisplayActivity extends AppCompatActivity {
         DeleteBtn = findViewById(R.id.DeleteBtn);
         EditBtn = findViewById(R.id.EditBtn);
 
-        txtModel = findViewById(R.id.CarModelInputBox);
-        txtBrand = findViewById(R.id.CarBrandInputBox);
-        txtModelYear = findViewById(R.id.YearModelInputBox);
-        txtMileage = findViewById(R.id.MileageInputBox);
-        txtPrice = findViewById(R.id.PriceInputBox);
-        txtDescription = findViewById(R.id.DescriptionInputBox);
+        txtModel = findViewById(R.id.CarModelDisplayBox);
+        txtBrand = findViewById(R.id.CarBrandDisplayBox);
+        txtModelYear = findViewById(R.id.YearModelDisplayBox);
+        txtMileage = findViewById(R.id.MileageDisplayBox);
+        txtPrice = findViewById(R.id.PriceDisplayBox);
+        txtDescription = findViewById(R.id.DescriptionDisplayBox);
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
         car = getCarFromIntent();
 

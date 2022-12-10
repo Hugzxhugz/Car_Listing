@@ -30,12 +30,12 @@ public class AddCarActivity extends AppCompatActivity {
 
         sqlrepository = SqliteCarRepository.getInstance(getApplicationContext());
 
-        CarModelInputBox = findViewById(R.id.CarModelInputBox);
-        CarBrandInputBox = findViewById(R.id.CarBrandInputBox);
-        YearModelInputBox= findViewById(R.id.YearModelInputBox);
-        MileageInputBox = findViewById(R.id.MileageInputBox);
-        PriceInputBox = findViewById(R.id.PriceInputBox);
-        DescriptionInputBox = findViewById(R.id.DescriptionInputBox);
+        CarModelInputBox = findViewById(R.id.CarModelDisplayBox);
+        CarBrandInputBox = findViewById(R.id.CarBrandDisplayBox);
+        YearModelInputBox= findViewById(R.id.YearModelDisplayBox);
+        MileageInputBox = findViewById(R.id.MileageDisplayBox);
+        PriceInputBox = findViewById(R.id.PriceDisplayBox);
+        DescriptionInputBox = findViewById(R.id.DescriptionDisplayBox);
         AddBtn = findViewById(R.id.AddBtn);
     }
 

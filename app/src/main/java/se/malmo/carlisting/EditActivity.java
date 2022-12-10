@@ -30,12 +30,12 @@ public class EditActivity extends AppCompatActivity {
 
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
-        CarModelEditBox = findViewById(R.id.CarModelInputBox);
-        CarBrandEditBox = findViewById(R.id.CarBrandInputBox);
-        YearModelEditBox= findViewById(R.id.YearModelInputBox);
-        MileageEditBox = findViewById(R.id.MileageInputBox);
-        PriceEditBox = findViewById(R.id.PriceInputBox);
-        DescriptionEditBox = findViewById(R.id.DescriptionInputBox);
+        CarModelEditBox = findViewById(R.id.CarModelDisplayBox);
+        CarBrandEditBox = findViewById(R.id.CarBrandDisplayBox);
+        YearModelEditBox= findViewById(R.id.YearModelDisplayBox);
+        MileageEditBox = findViewById(R.id.MileageDisplayBox);
+        PriceEditBox = findViewById(R.id.PriceDisplayBox);
+        DescriptionEditBox = findViewById(R.id.DescriptionDisplayBox);
         updateBtn = findViewById(R.id.AddBtn);
 
         car = getCarFromIntent();
