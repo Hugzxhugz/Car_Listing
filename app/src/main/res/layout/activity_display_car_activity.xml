@@ -253,7 +253,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/EditBtn"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/page_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
