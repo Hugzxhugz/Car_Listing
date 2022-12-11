@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
         carLogo.setAnimation(topAnim);
         carSlogan.setAnimation(bottomAnim);
 
-        new Handler().postDelayed((new Runnable() {
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }), SPLASH_SCREEN);
+        }, SPLASH_SCREEN);
 
     }
 }
