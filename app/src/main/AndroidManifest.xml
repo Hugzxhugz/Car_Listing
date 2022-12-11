@@ -15,6 +15,7 @@
         <activity
             android:name=".BrowsCarActivity"
             android:exported="false"
+            android:parentActivityName=".StartActivity"
             android:label="@string/app_name">
             <meta-data
                 android:name="android.app.lib_name"
