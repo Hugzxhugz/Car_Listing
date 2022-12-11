@@ -188,7 +188,9 @@ public class SqliteCarRepository implements Repository{
         Account acc = userRepo.findAccountById(accId);
 
         if (acc.getBalance()-car.getPrice() > 0){
-            acc.setBalance(acc.getBalance()-car.getPrice());
+            int newBalance = acc.getBalance()-car.getPrice();
+            acc.setBalance(newBalance);
+            LoggedIn.getInstance().setBalance(newBalance);
             buyCar(car, accId);
             userRepo.updateAccount(acc);
             return true;
