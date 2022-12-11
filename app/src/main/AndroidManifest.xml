@@ -13,7 +13,7 @@
         android:theme="@style/Theme.CarListing"
         tools:targetApi="31">
         <activity
-            android:name=".HomeActivity"
+            android:name=".BrowsCarActivity"
             android:exported="false"
             android:label="@string/app_name">
             <meta-data
