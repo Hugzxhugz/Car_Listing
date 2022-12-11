@@ -17,6 +17,7 @@ public class SqliteHelper extends SQLiteOpenHelper {
     public static final String DB_COLUMN_CAR_DESCRIPTION = "car_description";
     public static final String DB_COLUMN_CAR_PRICE = "car_price";
     public static final String DB_COLUMN_CAR_MILEAGE = "car_milage";
+    public static final String DB_COLUMN_OWNER_ID = "owner_id";
     private static SqliteHelper instance = null;
 
     public SqliteHelper(@Nullable Context context) {
@@ -51,8 +52,8 @@ public class SqliteHelper extends SQLiteOpenHelper {
                         DB_COLUMN_CAR_MODEL_YEAR+" TEXT," +
                         DB_COLUMN_CAR_DESCRIPTION+" TEXT," +
                         DB_COLUMN_CAR_PRICE+" INTEGER," +
-                        DB_COLUMN_CAR_MILEAGE+" INTEGER" +
-                        ")";
+                        DB_COLUMN_CAR_MILEAGE+" INTEGER," +
+                        DB_COLUMN_OWNER_ID+" TEXT"+")";
         db.execSQL(query);
     }
 }

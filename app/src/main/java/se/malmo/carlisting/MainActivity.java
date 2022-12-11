@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtBalance;
     String username;
     int balance;
+    Button btnShowMyCars;
     LoggedIn loggedIn;
 
     Repository sqlRepository;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         editTextSearch = findViewById(R.id.tbxSearch);
 
+        btnShowMyCars = findViewById(R.id.btnShowMyCars);
         recyclerView = findViewById(R.id.recycler_view);
         add_button = findViewById(R.id.addBtn);
         txtBalance = findViewById(R.id.txtMainBalance);
@@ -48,9 +51,10 @@ public class MainActivity extends AppCompatActivity {
 
         sqlRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
-        setCarAdaptor(sqlRepository.findAllCars());
-
         loggedIn = LoggedIn.getInstance();
+
+        setCarAdaptor(sqlRepository.findCarsForSale());
+
         getAccountInformation();
         displayAccountInformation();
 
@@ -62,13 +66,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String searched = editTextSearch.getText().toString();
-                if(!searched.isEmpty()) setCarAdaptor(sqlRepository.search(searched));
-                else setCarAdaptor(sqlRepository.findAllCars());
+                if(!searched.isEmpty()) setCarAdaptor(sqlRepository.search(sqlRepository.findCarsForSale(),searched));
+                else setCarAdaptor(sqlRepository.findCarsForSale());
             }
             @Override
             public void afterTextChanged(Editable editable) {
 
             }
+        });
+
+        btnShowMyCars.setOnClickListener(view -> {
+            Intent intent = new Intent(this, MyCarsActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -79,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
 }
+
     public void setCarAdaptor(ArrayList<Car> showCars){
         carAdapter = new CarAdapter(this, showCars);
         recyclerView.setAdapter(carAdapter);

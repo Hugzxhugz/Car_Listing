@@ -1,11 +1,11 @@
 package se.malmo.carlisting;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -57,13 +57,24 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder>  {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public final TextView txtModel, txtBrand, txtPrice;
+        public final Button btnBuy;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            btnBuy = itemView.findViewById(R.id.btnBuyCar);
             txtModel = itemView.findViewById(R.id.car_model_label);
             txtBrand = itemView.findViewById(R.id.car_brand_label);
-            txtPrice = itemView.findViewById(R.id.price_label);
+            txtPrice = itemView.findViewById(R.id.car_price_label);
+
+            btnBuy.setOnClickListener(view -> {
+                Repository carRepo = SqliteCarRepository.getInstance(context);
+                boolean buy = carRepo.attemptBuyCar(Integer.parseInt(txtModel.getTag().toString()));
+                if(buy){
+                    Intent intent = new Intent(context, MyCarsActivity.class);
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

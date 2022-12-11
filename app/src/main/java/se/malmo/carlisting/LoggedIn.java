@@ -1,5 +1,8 @@
 package se.malmo.carlisting;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class LoggedIn {
@@ -14,6 +17,10 @@ public class LoggedIn {
             instance = new LoggedIn();
         }
         return instance;
+    }
+
+    public int getAccountId() {
+        return accountId;
     }
 
     public static void setInstance(LoggedIn newInstance) {
@@ -58,4 +65,6 @@ public class LoggedIn {
             }
         }
     }
+
+
 }

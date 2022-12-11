@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class CreateAccountActivity extends AppCompatActivity {
     EditText username;
@@ -30,13 +31,14 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         createAccount.setOnClickListener(view -> {
             createNewAccount();
-            Intent intent = new Intent(this, StartActivity.class);
-
-            startActivity(intent);
         });
     }
 
     private void createNewAccount(){
+        if(balance.getText().toString().isEmpty() || password.getText().toString().isEmpty() || username.getText().toString().isEmpty()){
+            Toast.makeText(this, "you need to fill all fields", Toast.LENGTH_SHORT).show();
+            return;
+        }
         Account acc = new Account();
         String username = this.username.getText().toString();
         String password = this.password.getText().toString();
@@ -45,5 +47,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         acc.setName(username);
         acc.setPassword(password);
         userRepo.createAccount(acc);
+        Intent intent = new Intent(this, StartActivity.class);
+        startActivity(intent);
     }
 }

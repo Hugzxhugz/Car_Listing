@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
@@ -19,7 +20,15 @@ public class UserDatabaseHelper extends SQLiteOpenHelper implements UserReposito
     private static final String COLUMN_NAME = "username";
     private static final String COLUMN_PASSWORD = "password";
     private static final String COLUMN_BALANCE = "money";
+    private static UserDatabaseHelper instance = null;
     private Context context;
+
+    public static UserDatabaseHelper getInstance(Context context){
+        if(instance == null)
+            instance = new UserDatabaseHelper(context);
+
+        return instance;
+    }
 
 
     public UserDatabaseHelper(@Nullable Context context) {
@@ -91,5 +100,38 @@ public class UserDatabaseHelper extends SQLiteOpenHelper implements UserReposito
         }
         cursor.close();
         return users;
+    }
+
+    @NonNull
+    private String[] getWhereArgs(int id) {
+        String[] whereArgs = {String.valueOf(id)};
+        return whereArgs;
+    }
+
+    public void updateAccount(Account acc){
+        SQLiteDatabase db = getWritableDatabase();
+
+        String[] whereArgs = getWhereArgs(acc.getId());
+        ContentValues cv = getAccContentValues(acc);
+        long result = db.update(DB_TABLE_NAME, cv, "id = ?", whereArgs);
+    }
+
+    @Override
+    public Account findAccountById(int accId) {
+        SQLiteDatabase db = getReadableDatabase();
+        String query = "SELECT * FROM "+DB_TABLE_NAME+" WHERE id = " + accId;
+        Cursor cursor = db.rawQuery(query, null);
+        Account acc = null;
+
+        if(cursor.moveToFirst()){
+            acc = new Account();
+            acc.setId(cursor.getInt(0));
+            acc.setName(cursor.getString(1));
+            acc.setPassword(cursor.getString(2));
+            acc.setBalance(cursor.getInt(3));
+        }
+
+        cursor.close();
+        return acc;
     }
 }

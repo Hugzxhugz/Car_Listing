@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import java.security.acl.Owner;
 import java.util.ArrayList;
 
 public class SqliteCarRepository implements Repository{
@@ -16,12 +17,6 @@ public class SqliteCarRepository implements Repository{
     private static SqliteCarRepository instance = null;
     private Context context;
 
-    @Override
-    public ArrayList<Car> search(String searchFor) {
-        ArrayList<Car> findCars = findAllCars();
-        findCars = search(findCars, searchFor);
-        return findCars;
-    }
 
     private SqliteCarRepository(Context context){
         this.context = context;
@@ -50,6 +45,7 @@ public class SqliteCarRepository implements Repository{
                         .setDescription(cursor.getString(4))
                         .setPrice(cursor.getInt(5))
                         .setMileage(cursor.getInt(6))
+                        .setOwnerId(cursor.getInt(7))
                 : null;
 
 
@@ -58,11 +54,11 @@ public class SqliteCarRepository implements Repository{
     }
 
     @Override
-    public ArrayList<Car> findAllCars() {
+    public ArrayList<Car> findCarsForSale() {
         SQLiteDatabase db = sqlite.getReadableDatabase();
         ArrayList<Car> cars = new ArrayList<>();
 
-        String query = "SELECT * FROM "+SqliteHelper.DB_TABLE_NAME;
+        String query = "SELECT * FROM "+SqliteHelper.DB_TABLE_NAME+" WHERE "+ SqliteHelper.DB_COLUMN_OWNER_ID+" = 0";
         Cursor cursor = db.rawQuery(query, null);
 
         while (cursor.moveToNext()){
@@ -73,7 +69,8 @@ public class SqliteCarRepository implements Repository{
                     .setModelYear(cursor.getString(3))
                     .setDescription(cursor.getString(4))
                     .setPrice(cursor.getInt(5))
-                    .setMileage(cursor.getInt(6));
+                    .setMileage(cursor.getInt(6))
+                    .setOwnerId(cursor.getInt(7));
             cars.add(car);
         }
         cursor.close();
@@ -126,6 +123,7 @@ public class SqliteCarRepository implements Repository{
         c.put(SqliteHelper.DB_COLUMN_CAR_DESCRIPTION, car.getDescription());
         c.put(SqliteHelper.DB_COLUMN_CAR_PRICE, car.getPrice());
         c.put(SqliteHelper.DB_COLUMN_CAR_MILEAGE, car.getMileage());
+        c.put(SqliteHelper.DB_COLUMN_OWNER_ID, car.getOwnerId());
         return c;
     }
 
@@ -143,7 +141,7 @@ public class SqliteCarRepository implements Repository{
         }
     }
 
-    private ArrayList<Car> search(ArrayList<Car> carList, String searchingFor){
+    public ArrayList<Car> search(ArrayList<Car> carList, String searchingFor){
         ArrayList<Car> newList = new ArrayList<>();
         searchingFor = searchingFor.replace(" ", "").toLowerCase();
         for (int i = 0; i < carList.size(); i++){
@@ -152,6 +150,52 @@ public class SqliteCarRepository implements Repository{
             }
         }
         return newList;
+    }
+
+    private void buyCar(Car car, int buyerId){
+        car.setOwnerId(buyerId);
+        updateCar(car);
+    }
+
+    @Override
+    public ArrayList<Car> findMyCars(int ownerId) {
+        SQLiteDatabase db = sqlite.getReadableDatabase();
+        ArrayList<Car> cars = new ArrayList<>();
+
+        String query = "SELECT * FROM "+SqliteHelper.DB_TABLE_NAME+" WHERE "+ SqliteHelper.DB_COLUMN_OWNER_ID+" = "+ownerId;
+        Cursor cursor = db.rawQuery(query, null);
+
+        while (cursor.moveToNext()){
+            Car car = new Car()
+                    .setId(cursor.getInt(0))
+                    .setModel(cursor.getString(1))
+                    .setBrand(cursor.getString(2))
+                    .setModelYear(cursor.getString(3))
+                    .setDescription(cursor.getString(4))
+                    .setPrice(cursor.getInt(5))
+                    .setMileage(cursor.getInt(6))
+                    .setOwnerId(cursor.getInt(7));
+            cars.add(car);
+        }
+        cursor.close();
+        return cars;
+    }
+    public boolean attemptBuyCar(int carId){
+        UserRepository userRepo = UserDatabaseHelper.getInstance(context);
+        Repository carRepository = getInstance(context);
+        int accId = LoggedIn.getInstance().getAccountId();
+        Car car =  carRepository.findCarById(carId);
+        Account acc = userRepo.findAccountById(accId);
+
+        if (acc.getBalance()-car.getPrice() > 0){
+            acc.setBalance(acc.getBalance()-car.getPrice());
+            buyCar(car, accId);
+            userRepo.updateAccount(acc);
+            return true;
+        } else{
+            Toast.makeText(context, "Not enough funds", Toast.LENGTH_SHORT).show();
+            return false;
+        }
     }
 }
 
