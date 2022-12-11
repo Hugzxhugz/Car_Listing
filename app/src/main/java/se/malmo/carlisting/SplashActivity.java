@@ -25,6 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
 

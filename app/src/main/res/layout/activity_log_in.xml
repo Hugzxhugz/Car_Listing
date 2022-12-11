@@ -4,31 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cartoonBlue"
     tools:context=".LogInActivity">
+
+    <ImageView
+        android:id="@+id/carSloganLogin2"
+        android:layout_width="218dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/slogan" />
 
     <EditText
         android:id="@+id/tbxLogInUsername"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/text_box_border"
+        android:backgroundTint="#C8E3E6"
         android:ems="10"
+        android:fontFamily="sans-serif-medium"
         android:hint="Enter your username"
         android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/carSloganLogin2" />
 
     <EditText
         android:id="@+id/tbxLogInPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/text_box_border"
+        android:backgroundTint="#C8E3E6"
         android:ems="10"
+        android:fontFamily="sans-serif-medium"
         android:hint="Enter your password"
         android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbxLogInUsername" />
 
@@ -36,10 +57,49 @@
         android:id="@+id/btnLogIn"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/marineBlue"
+        android:fontFamily="sans-serif-condensed"
         android:text="Log in"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbxLogInPassword" />
+
+    <TextView
+        android:id="@+id/LoginUserNameLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Username"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/tbxLogInUsername"
+        app:layout_constraintEnd_toEndOf="@+id/tbxLogInUsername"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tbxLogInUsername" />
+
+    <TextView
+        android:id="@+id/LoginPasswordLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Password"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/tbxLogInPassword"
+        app:layout_constraintEnd_toEndOf="@+id/tbxLogInPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tbxLogInPassword" />
+
+    <ImageView
+        android:id="@+id/LogInIcon"
+        android:layout_width="207dp"
+        android:layout_height="248dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogIn"
+        app:srcCompat="@drawable/car_icon" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
