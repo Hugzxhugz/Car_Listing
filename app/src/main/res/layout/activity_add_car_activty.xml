@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:onClick="onConfirmAddBtnClick"
-    tools:context=".AddCarActivity">
+    tools:context=".AddCarActivity"
+    android:background="@color/cartoonBlue">
 
     <EditText
         android:id="@+id/CarModelDisplayBox"
@@ -124,7 +125,7 @@
         android:layout_width="297dp"
         android:layout_height="64dp"
         android:layout_marginTop="40dp"
-        android:backgroundTint="@android:color/holo_blue_dark"
+        android:backgroundTint="@color/marineBlue"
         android:fontFamily="sans-serif-condensed"
         android:onClick="onConfirmAddBtnClick"
 
@@ -215,17 +216,15 @@
         app:layout_constraintStart_toStartOf="@+id/DescriptionDisplayBox" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="130dp"
-        android:layout_height="137dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/logInIcon"
+        android:layout_width="207dp"
+        android:layout_height="248dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AddBtn"
-        app:srcCompat="@drawable/page_icon" />
+
+        app:srcCompat="@drawable/car_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

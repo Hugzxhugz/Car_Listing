@@ -4,41 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cartoonBlue"
     tools:context=".CreateAccountActivity">
-
-    <Button
-        android:id="@+id/btnCreateAccount"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="30dp"
-        android:text="Create Account"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbxCreateAccountDeposit" />
 
     <EditText
         android:id="@+id/tbxCreateAccountUsername"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
+        android:background="@drawable/text_box_border"
+        android:backgroundTint="#C8E3E6"
+        android:fontFamily="sans-serif-medium"
         android:hint="Enter a username"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/carSloganLogin3" />
 
     <EditText
         android:id="@+id/tbxCreateAccountPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
+        android:background="@drawable/text_box_border"
+        android:backgroundTint="#C8E3E6"
+        android:fontFamily="sans-serif-medium"
         android:hint="Enter a password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbxCreateAccountUsername" />
 
@@ -46,11 +42,87 @@
         android:id="@+id/tbxCreateAccountDeposit"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
+        android:background="@drawable/text_box_border"
+        android:backgroundTint="#C8E3E6"
+        android:fontFamily="sans-serif-medium"
         android:hint="Enter a deposit"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbxCreateAccountPassword" />
+
+    <Button
+        android:id="@+id/btnCreateAccount"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/marineBlue"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Create Account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbxCreateAccountDeposit" />
+
+    <TextView
+        android:id="@+id/NewUserNameLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Username"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/tbxCreateAccountUsername"
+        app:layout_constraintEnd_toEndOf="@+id/tbxCreateAccountUsername"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tbxCreateAccountUsername" />
+
+    <TextView
+        android:id="@+id/NewPasswordLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Password"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/tbxCreateAccountPassword"
+        app:layout_constraintEnd_toEndOf="@+id/tbxCreateAccountPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tbxCreateAccountPassword" />
+
+    <TextView
+        android:id="@+id/NewDepositLabel"
+        android:layout_width="135dp"
+        android:layout_height="25dp"
+        android:text="Deposit Amount"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/tbxCreateAccountDeposit"
+        app:layout_constraintEnd_toEndOf="@+id/tbxCreateAccountDeposit"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tbxCreateAccountDeposit" />
+
+    <ImageView
+        android:id="@+id/logInIcon"
+        android:layout_width="207dp"
+        android:layout_height="248dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/car_icon" />
+
+    <ImageView
+        android:id="@+id/carSloganLogin3"
+        android:layout_width="218dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/slogan" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
