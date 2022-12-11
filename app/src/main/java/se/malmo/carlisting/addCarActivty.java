@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class addCarActivty extends AppCompatActivity {
 
@@ -42,7 +41,7 @@ public class addCarActivty extends AppCompatActivity {
 
     public void onConfirmAddBtnClick(View view){
         addCar();
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, BrowsCarActivity.class);
         startActivity(intent);
     }
 

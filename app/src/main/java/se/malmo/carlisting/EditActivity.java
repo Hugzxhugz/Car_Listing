@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
     Repository carRepository;
@@ -65,7 +64,7 @@ public class EditActivity extends AppCompatActivity {
     //  button function crashes app
     public void onUpdateBtnClick(View view){
         updateCar();
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, BrowsCarActivity.class);
         startActivity(intent);
     }
 

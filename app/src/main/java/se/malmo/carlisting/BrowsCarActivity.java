@@ -19,7 +19,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class BrowsCarActivity extends AppCompatActivity {
     EditText editTextSearch;
     RecyclerView recyclerView;
     FloatingActionButton add_button;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_browse_cars);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
 
         editTextSearch = findViewById(R.id.tbxSearch);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onAddButtonClick(View view){
 
-        Intent intent = new Intent(MainActivity.this,addCarActivty.class);
+        Intent intent = new Intent(BrowsCarActivity.this,addCarActivty.class);
         startActivity(intent);
 
 }
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     public void setCarAdaptor(ArrayList<Car> showCars){
         carAdapter = new CarAdapter(this, showCars);
         recyclerView.setAdapter(carAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(BrowsCarActivity.this));
     }
 
     public void getAccountInformation(){

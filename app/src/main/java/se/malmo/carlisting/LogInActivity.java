@@ -43,7 +43,7 @@ public class LogInActivity extends AppCompatActivity {
         if(!LoggedIn.isLoggedIn()){
             Toast.makeText(this, "Log in failed", Toast.LENGTH_SHORT).show();
         } else{
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, BrowsCarActivity.class);
           //  intent.putExtra("username", log_In.getUsername());
           //  intent.putExtra("balance", log_In.getBalance());
             startActivity(intent);
