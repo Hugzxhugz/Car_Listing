@@ -77,6 +77,7 @@ public class EditActivity extends AppCompatActivity {
         car.setMileage(Integer.parseInt(MileageEditBox.getText().toString()));
         car.setPrice(configPrice(PriceEditBox.getText().toString()));
         car.setDescription(DescriptionEditBox.getText().toString());
+        car.setOwnerId(this.car.getOwnerId());
         carRepository.save(car);
 
     }
