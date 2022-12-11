@@ -6,11 +6,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -27,7 +31,7 @@ public class BrowsCarActivity extends AppCompatActivity {
     TextView txtBalance;
     String username;
     int balance;
-    Button btnShowMyCars;
+
     LoggedIn loggedIn;
 
     Repository sqlRepository;
@@ -43,7 +47,7 @@ public class BrowsCarActivity extends AppCompatActivity {
 
         editTextSearch = findViewById(R.id.tbxSearch);
 
-        btnShowMyCars = findViewById(R.id.btnShowMyCars);
+
         recyclerView = findViewById(R.id.recycler_view);
         add_button = findViewById(R.id.addBtn);
         txtBalance = findViewById(R.id.txtMainBalance);
@@ -75,10 +79,6 @@ public class BrowsCarActivity extends AppCompatActivity {
             }
         });
 
-        btnShowMyCars.setOnClickListener(view -> {
-            Intent intent = new Intent(this, MyCarsActivity.class);
-            startActivity(intent);
-        });
     }
 
 
@@ -102,5 +102,21 @@ public class BrowsCarActivity extends AppCompatActivity {
     public void displayAccountInformation(){
         txtUsername.setText(username);
         txtBalance.setText(String.valueOf(balance)+" kr");
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.my_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.myCars){
+            Intent intent = new Intent(this, MyCarsActivity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
