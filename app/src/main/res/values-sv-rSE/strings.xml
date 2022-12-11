@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Bil Lista</string>
-    <string name="car_model">Car model</string>
-    <string name="car_brand">Car brand</string>
-    <string name="year_model">Year model</string>
-    <string name="price">Price</string>
-    <string name="description">Description</string>
-    <string name="edit">Edit</string>
-    <string name="delete">Delete</string>
+    <string name="car_model">Bilmodell</string>
+    <string name="car_brand">Bilmärke</string>
+    <string name="year_model">År Modell</string>
+    <string name="price">Pris</string>
+    <string name="description">Beskrivning</string>
+    <string name="delete">Radera</string>
     <string name="mileage">Miltal</string>
+    <string name="edit">Redigera</string>
+    <string name="add">Lägg till</string>
+    <string name="update">Uppdatera</string>
+    <string name="message_searchbar">Sök efter bilmodell eller märke</string>
+    <string name="message_success">Succe!</string>
+    <string name="message_fail">Misslyckades</string>
+    <string name="add_menu_name">Lägg till bil</string>
+    <string name="display_menu_name">Visa bilen</string>
+    <string name="edit_menu_name">Redigera bilen</string>
 </resources>

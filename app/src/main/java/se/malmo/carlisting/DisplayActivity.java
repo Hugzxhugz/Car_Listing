@@ -3,7 +3,9 @@ package se.malmo.carlisting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,18 +25,18 @@ public class DisplayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_car_activity);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.cartoonBlue)));
 
-        this.setTitle("Car Display");
 
-        DeleteBtn = findViewById(R.id.delete);
-        EditBtn = findViewById(R.id.edit);
+        DeleteBtn = findViewById(R.id.DeleteBtn);
+        EditBtn = findViewById(R.id.EditBtn);
 
-        txtModel = findViewById(R.id.txtCarModel);
-        txtBrand = findViewById(R.id.txtBrand);
-        txtModelYear = findViewById(R.id.txtYear);
-        txtMileage = findViewById(R.id.txtMileage);
-        txtPrice = findViewById(R.id.txtPrice);
-        txtDescription = findViewById(R.id.txtDescription);
+        txtModel = findViewById(R.id.CarModelDisplayBox);
+        txtBrand = findViewById(R.id.CarBrandDisplayBox);
+        txtModelYear = findViewById(R.id.YearModelDisplayBox);
+        txtMileage = findViewById(R.id.MileageDisplayBox);
+        txtPrice = findViewById(R.id.PriceDisplayBox);
+        txtDescription = findViewById(R.id.DescriptionDisplayBox);
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
         car = getCarFromIntent();
 

@@ -1,4 +1,4 @@
-package se.malmo.carlisting;
+/*package se.malmo.carlisting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,4 +56,4 @@ public class addCarActivty extends AppCompatActivity {
 
         sqlrepository.save(car);
     }
-}
+} */

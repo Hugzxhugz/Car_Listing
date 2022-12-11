@@ -5,7 +5,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -69,7 +68,7 @@ public class MyCarsActivity extends AppCompatActivity {
 
 
     public void onAddButtonClick(View view){
-        Intent intent = new Intent(this,addCarActivty.class);
+        Intent intent = new Intent(this,AddCarActivity.class);
         startActivity(intent);
 
     }

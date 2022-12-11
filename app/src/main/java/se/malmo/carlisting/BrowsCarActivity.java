@@ -1,9 +1,5 @@
 package se.malmo.carlisting;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -14,6 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -83,8 +83,7 @@ public class BrowsCarActivity extends AppCompatActivity {
 
 
     public void onAddButtonClick(View view){
-
-        Intent intent = new Intent(BrowsCarActivity.this,addCarActivty.class);
+        Intent intent = new Intent(this,AddCarActivity.class);
         startActivity(intent);
 
 }
@@ -96,9 +95,6 @@ public class BrowsCarActivity extends AppCompatActivity {
     }
 
     public void getAccountInformation(){
-       // Intent intent = getIntent();
-       // username = intent.getStringExtra("username");
-       // balance = intent.getIntExtra("balance", 0);
         username = loggedIn.getUsername();
         balance = loggedIn.getBalance();
     }

@@ -83,9 +83,11 @@ public class SqliteCarRepository implements Repository{
         String[] args = getWhereArgs(id);
         long result = db.delete(SqliteHelper.DB_TABLE_NAME, "id = ?", args);
         if (result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.message_fail);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.message_success);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -102,9 +104,11 @@ public class SqliteCarRepository implements Repository{
         ContentValues c = getContentValues(car);
         long result = db.insert(SqliteHelper.DB_TABLE_NAME, null, c);
         if (result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.message_fail);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.message_success);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -135,9 +139,11 @@ public class SqliteCarRepository implements Repository{
 
         long result = db.update(SqliteHelper.DB_TABLE_NAME, c, "id = ?", whereArgs);
         if (result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.message_fail);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.message_success);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         }
     }
 

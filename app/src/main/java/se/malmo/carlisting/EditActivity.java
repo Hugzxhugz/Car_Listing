@@ -25,18 +25,18 @@ public class EditActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black)));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.cartoonBlue)));
 
 
         carRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
-        CarModelEditBox = findViewById(R.id.CarModelEditBox);
-        CarBrandEditBox = findViewById(R.id.CarBrandEditBox);
-        YearModelEditBox= findViewById(R.id.YearModelEditBox);
-        MileageEditBox = findViewById(R.id.MileageEditBox);
-        PriceEditBox = findViewById(R.id.PriceEditBox);
-        DescriptionEditBox = findViewById(R.id.DescriptionEditBox);
-        updateBtn = findViewById(R.id.UpdateBtn);
+        CarModelEditBox = findViewById(R.id.CarModelDisplayBox);
+        CarBrandEditBox = findViewById(R.id.CarBrandDisplayBox);
+        YearModelEditBox= findViewById(R.id.YearModelDisplayBox);
+        MileageEditBox = findViewById(R.id.MileageDisplayBox);
+        PriceEditBox = findViewById(R.id.PriceDisplayBox);
+        DescriptionEditBox = findViewById(R.id.DescriptionDisplayBox);
+        updateBtn = findViewById(R.id.AddBtn);
 
         car = getCarFromIntent();
         displayEditCar();
@@ -64,7 +64,7 @@ public class EditActivity extends AppCompatActivity {
     //  button function crashes app
     public void onUpdateBtnClick(View view){
         updateCar();
-        Intent intent = new Intent(this, BrowsCarActivity.class);
+        Intent intent = new Intent(this,BrowsCarActivity.class);
         startActivity(intent);
     }
 
