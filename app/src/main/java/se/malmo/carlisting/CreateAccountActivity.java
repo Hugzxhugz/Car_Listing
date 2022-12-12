@@ -18,7 +18,6 @@ public class CreateAccountActivity extends AppCompatActivity {
     EditText balance;
     Button createAccount;
     UserRepository userRepo;
-    private Context context;
 
 
     @Override
@@ -43,7 +42,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private void createNewAccount(){
         if(balance.getText().toString().isEmpty() || password.getText().toString().isEmpty() || username.getText().toString().isEmpty()){
-            String message = context.getString(R.string.create_toast_fill_fields);
+            String message = this.getString(R.string.create_toast_fill_fields);
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             return;
         }
