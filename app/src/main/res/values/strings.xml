@@ -16,4 +16,15 @@
     <string name="add_menu_name">Add car</string>
     <string name="display_menu_name">Display car</string>
     <string name="edit_menu_name">Edit car</string>
+    <string name="login">Log in</string>
+    <string name="create_account">Create Account</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="deposit_amount">Deposit Amount</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="my_cars">My Cars</string>
+    <string name="my_account">My Account</string>
+    <string name="buy">Buy</string>
 </resources>

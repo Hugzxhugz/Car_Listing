@@ -17,4 +17,15 @@
     <string name="add_menu_name">Lägg till bil</string>
     <string name="display_menu_name">Visa bilen</string>
     <string name="edit_menu_name">Redigera bilen</string>
+    <string name="login">Logga in</string>
+    <string name="create_account">Skapa konto</string>
+    <string name="user_name">Användarnamn</string>
+    <string name="password">Lösenord</string>
+    <string name="deposit_amount">Insättningsbelopp</string>
+    <string name="enter_username">Skriv in ditt användarnamn</string>
+    <string name="enter_password">Skriv in ditt lösenord</string>
+    <string name="enter_amount">Ange belopp</string>
+    <string name="my_cars">Mina Bilar</string>
+    <string name="my_account">Min Konto</string>
+    <string name="buy">Köp</string>
 </resources>
