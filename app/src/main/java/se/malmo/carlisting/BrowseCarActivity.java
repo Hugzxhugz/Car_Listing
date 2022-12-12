@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -23,7 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
-public class BrowsCarActivity extends AppCompatActivity {
+public class BrowseCarActivity extends AppCompatActivity {
     EditText editTextSearch;
     RecyclerView recyclerView;
     FloatingActionButton add_button;
@@ -91,7 +90,7 @@ public class BrowsCarActivity extends AppCompatActivity {
     public void setCarAdaptor(ArrayList<Car> showCars){
         carAdapter = new CarAdapter(this, showCars);
         recyclerView.setAdapter(carAdapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(BrowsCarActivity.this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(BrowseCarActivity.this));
     }
 
     public void getAccountInformation(){

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.CarListing"
         tools:targetApi="31">
         <activity
-            android:name=".BrowsCarActivity"
+            android:name=".BrowseCarActivity"
             android:exported="false"
             android:parentActivityName=".StartActivity"
             android:label="@string/app_name">
@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name=".MyCarsActivity"
-            android:parentActivityName=".BrowsCarActivity"
+            android:parentActivityName=".BrowseCarActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -57,7 +57,7 @@
             android:name=".EditActivity"
             android:exported="false"
             android:label="@string/edit_menu_name"
-            android:parentActivityName=".BrowsCarActivity">
+            android:parentActivityName=".BrowseCarActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -66,7 +66,7 @@
             android:name=".DisplayActivity"
             android:exported="false"
             android:label="@string/display_menu_name"
-            android:parentActivityName=".BrowsCarActivity">
+            android:parentActivityName=".BrowseCarActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -75,7 +75,7 @@
             android:name=".AddCarActivity"
             android:exported="false"
             android:label="@string/add_menu_name"
-            android:parentActivityName=".BrowsCarActivity">
+            android:parentActivityName=".BrowseCarActivity">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:title="My Accounr"
+        android:id="@+id/myAccount"
+        android:icon="@drawable/ic_account"
+        app:showAsAction="always" />
+
+    <item
         android:title="My Cars"
         android:id="@+id/myCars"
         app:showAsAction="never" />

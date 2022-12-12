@@ -46,7 +46,7 @@ public class LogInActivity extends AppCompatActivity {
         if(!LoggedIn.isLoggedIn()){
             Toast.makeText(this, "Log in failed", Toast.LENGTH_SHORT).show();
         } else{
-            Intent intent = new Intent(this, BrowsCarActivity.class);
+            Intent intent = new Intent(this, BrowseCarActivity.class);
             startActivity(intent);
         }
     }
