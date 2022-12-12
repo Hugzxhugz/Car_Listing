@@ -28,4 +28,6 @@
     <string name="my_cars">Mina Bilar</string>
     <string name="my_account">Min Konto</string>
     <string name="buy">Köp</string>
+    <string name="my_balance">Min saldo</string>
+    <string name="close">Stäng fönster</string>
 </resources>

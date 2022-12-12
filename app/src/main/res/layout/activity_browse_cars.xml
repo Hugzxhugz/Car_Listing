@@ -27,7 +27,7 @@
             android:background="@drawable/text_box_border"
             android:backgroundTint="#CEEBEF"
             app:autoSizeTextType="uniform"
-            android:hint="Search for car model or brand"
+            android:hint="@string/message_searchbar"
             android:inputType="textPersonName"
             android:textSize="24sp" />
 

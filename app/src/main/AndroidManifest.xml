@@ -24,6 +24,7 @@
         <activity
             android:name=".MyCarsActivity"
             android:parentActivityName=".BrowseCarActivity"
+            android:label="@string/my_cars"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

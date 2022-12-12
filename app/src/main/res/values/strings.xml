@@ -27,4 +27,6 @@
     <string name="my_cars">My Cars</string>
     <string name="my_account">My Account</string>
     <string name="buy">Buy</string>
+    <string name="my_balance">My balance</string>
+    <string name="close">" Close window"</string>
 </resources>
