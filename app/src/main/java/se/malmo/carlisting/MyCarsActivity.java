@@ -1,5 +1,7 @@
 package se.malmo.carlisting;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,7 +11,11 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,14 +24,18 @@ import java.util.ArrayList;
 public class MyCarsActivity extends AppCompatActivity {
     EditText editTextSearch;
     RecyclerView recyclerView;
-    TextView txtUsername;
     String username;
+    int balance;
+
     LoggedIn loggedIn;
 
     Repository sqlRepository;
 
     MyCarsAdaptor myCarsAdaptor;
-
+    private AlertDialog.Builder dialogBuilder;
+    private TextView userName,userBalance;
+    private Button popUpcloseButton;
+    private AlertDialog dialog;
 
 
     @Override
@@ -37,14 +47,13 @@ public class MyCarsActivity extends AppCompatActivity {
         editTextSearch = findViewById(R.id.tbxMyCarSearch);
 
         recyclerView = findViewById(R.id.mycarrecycler_view);
-        txtUsername = findViewById(R.id.txtMyCarUsername);
 
         sqlRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
 
         loggedIn = LoggedIn.getInstance();
         getAccountInformation();
-        displayAccountInformation();
+
 
         setCarAdaptor(sqlRepository.findMyCars(loggedIn.getAccountId()));
 
@@ -81,10 +90,50 @@ public class MyCarsActivity extends AppCompatActivity {
 
     public void getAccountInformation(){
         username = loggedIn.getUsername();
+        balance = loggedIn.getBalance();
     }
 
-    public void displayAccountInformation(){
-        txtUsername.setText(username);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.car_account,menu);
+        return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.myAccount){
+            createNewPopUpDialog();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void createNewPopUpDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View myAccountPopUp = getLayoutInflater().inflate(R.layout.popup,null);
+        userName = myAccountPopUp.findViewById(R.id.userName);
+        userBalance = myAccountPopUp.findViewById(R.id.userBalance);
+
+        userName.setText(username);
+        userBalance.setText(String.valueOf(balance)+" kr");
+
+        popUpcloseButton = myAccountPopUp.findViewById(R.id.popUpcloseButton);
+
+        dialogBuilder.setView(myAccountPopUp);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        popUpcloseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+
+
+    }
+
+
 
 }
