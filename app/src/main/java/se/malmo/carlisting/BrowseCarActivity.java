@@ -28,8 +28,6 @@ public class BrowseCarActivity extends AppCompatActivity {
     EditText editTextSearch;
     RecyclerView recyclerView;
     FloatingActionButton add_button;
-    TextView txtUsername;
-    TextView txtBalance;
     String username;
     int balance;
     LoggedIn loggedIn;

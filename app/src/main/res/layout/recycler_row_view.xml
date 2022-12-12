@@ -85,7 +85,7 @@
                     android:layout_marginEnd="32dp"
                     android:layout_marginBottom="12dp"
                     android:backgroundTint="#419D45"
-                    android:text="Buy"
+                    android:text="@string/buy"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
