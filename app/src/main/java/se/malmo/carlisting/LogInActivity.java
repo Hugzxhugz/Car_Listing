@@ -25,9 +25,9 @@ public class LogInActivity extends AppCompatActivity {
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.marineBlue)));
 
 
-        username = findViewById(R.id.tbxLogInUsername);
-        password = findViewById(R.id.tbxLogInPassword);
-        logIn = findViewById(R.id.btnLogIn);
+        username = findViewById(R.id.userName);
+        password = findViewById(R.id.userBalance);
+        logIn = findViewById(R.id.popUpcloseButton);
 
         userRepo = new UserDatabaseHelper(getApplicationContext());
         log_In = LoggedIn.getInstance();

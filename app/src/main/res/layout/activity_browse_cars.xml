@@ -50,36 +50,4 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@android:drawable/ic_input_add" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="40dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:padding="5dp"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <TextView
-            android:id="@+id/txtMainUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ID: Username"
-            android:textColor="@color/white"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/txtMainBalance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Balance"
-            android:textColor="@color/white"
-            android:textSize="34sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMainUsername" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

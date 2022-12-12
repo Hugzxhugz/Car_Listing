@@ -10,10 +10,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -30,12 +32,14 @@ public class BrowseCarActivity extends AppCompatActivity {
     TextView txtBalance;
     String username;
     int balance;
-
     LoggedIn loggedIn;
-
     Repository sqlRepository;
-
     CarAdapter carAdapter;
+
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog dialog;
+    private TextView userName, userBalance;
+    private Button popUpcloseButton;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -49,8 +53,6 @@ public class BrowseCarActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recycler_view);
         add_button = findViewById(R.id.addBtn);
-        txtBalance = findViewById(R.id.txtMainBalance);
-        txtUsername = findViewById(R.id.txtMainUsername);
 
         sqlRepository = SqliteCarRepository.getInstance(getApplicationContext());
 
@@ -59,7 +61,6 @@ public class BrowseCarActivity extends AppCompatActivity {
         setCarAdaptor(sqlRepository.findCarsForSale());
 
         getAccountInformation();
-        displayAccountInformation();
 
         editTextSearch.addTextChangedListener(new TextWatcher() {
             @Override
@@ -77,9 +78,7 @@ public class BrowseCarActivity extends AppCompatActivity {
 
             }
         });
-
     }
-
 
     public void onAddButtonClick(View view){
         Intent intent = new Intent(this,AddCarActivity.class);
@@ -98,11 +97,6 @@ public class BrowseCarActivity extends AppCompatActivity {
         balance = loggedIn.getBalance();
     }
 
-    public void displayAccountInformation(){
-        txtUsername.setText(username);
-        txtBalance.setText(String.valueOf(balance)+" kr");
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -112,10 +106,42 @@ public class BrowseCarActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.myAccount){
+            createNewPopUpDialog();
+        }
         if(item.getItemId() == R.id.myCars){
             Intent intent = new Intent(this, MyCarsActivity.class);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void createNewPopUpDialog(){
+        dialogBuilder = new AlertDialog.Builder(this);
+        final View myAccountPopUp = getLayoutInflater().inflate(R.layout.popup,null);
+        userName = myAccountPopUp.findViewById(R.id.userName);
+        userBalance = myAccountPopUp.findViewById(R.id.userBalance);
+
+        userName.setText(username);
+        userBalance.setText(String.valueOf(balance)+" kr");
+
+        popUpcloseButton = myAccountPopUp.findViewById(R.id.popUpcloseButton);
+
+        dialogBuilder.setView(myAccountPopUp);
+        dialog = dialogBuilder.create();
+        dialog.show();
+
+        popUpcloseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+
+
+    }
+
+
+
 }
