@@ -29,4 +29,9 @@
     <string name="buy">Buy</string>
     <string name="my_balance">My balance</string>
     <string name="close">" Close window"</string>
+    <string name="create_toast_fill_fields">You need to fill all fields</string>
+    <string name="login_failed">Log in failed</string>
+    <string name="not_enough_funds">Not enough funds</string>
+    <string name="failed_create">Failed to create account</string>
+    <string name="success_create">Successfully created account</string>
 </resources>

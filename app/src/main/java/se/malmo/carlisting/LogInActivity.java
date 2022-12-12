@@ -3,6 +3,7 @@ package se.malmo.carlisting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ public class LogInActivity extends AppCompatActivity {
     Button logIn;
     LoggedIn log_In;
     UserRepository userRepo;
+    Context context;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,7 +46,8 @@ public class LogInActivity extends AppCompatActivity {
         log_In.logIn(userRepo.findAllAccounts(), name, pass);
         log_In = LoggedIn.getInstance();
         if(!LoggedIn.isLoggedIn()){
-            Toast.makeText(this, "Log in failed", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.login_failed);
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         } else{
             Intent intent = new Intent(this, BrowseCarActivity.class);
             startActivity(intent);

@@ -201,7 +201,8 @@ public class SqliteCarRepository implements Repository{
             userRepo.updateAccount(acc);
             return true;
         } else{
-            Toast.makeText(context, "Not enough funds", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.not_enough_funds);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
             return false;
         }
     }

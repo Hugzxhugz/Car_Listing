@@ -66,9 +66,11 @@ public class UserDatabaseHelper extends SQLiteOpenHelper implements UserReposito
         ContentValues cv = getAccContentValues(acc);
         long result = db.insert(DB_TABLE_NAME, null, cv);
         if (result == -1){
-            Toast.makeText(context, "Failed to create account", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.failed_create);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(context, "successfully created account", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.success_create);
+            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
         }
         return ;
     }

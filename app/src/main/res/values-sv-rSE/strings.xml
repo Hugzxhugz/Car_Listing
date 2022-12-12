@@ -30,4 +30,9 @@
     <string name="buy">Köp</string>
     <string name="my_balance">Min saldo</string>
     <string name="close">Stäng</string>
+    <string name="create_toast_fill_fields">Du måste fylla i alla fält</string>
+    <string name="login_failed">Inloggningen misslyckades</string>
+    <string name="not_enough_funds">Inte tillräkligt med pengar</string>
+    <string name="failed_create">Misslyckades med att skapa konto</string>
+    <string name="success_create">Lyckades skapa konto</string>
 </resources>

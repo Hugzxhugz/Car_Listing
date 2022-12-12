@@ -2,6 +2,7 @@ package se.malmo.carlisting;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -9,12 +10,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ResourceBundle;
+
 public class CreateAccountActivity extends AppCompatActivity {
     EditText username;
     EditText password;
     EditText balance;
     Button createAccount;
     UserRepository userRepo;
+    private Context context;
 
 
     @Override
@@ -39,7 +43,8 @@ public class CreateAccountActivity extends AppCompatActivity {
 
     private void createNewAccount(){
         if(balance.getText().toString().isEmpty() || password.getText().toString().isEmpty() || username.getText().toString().isEmpty()){
-            Toast.makeText(this, "you need to fill all fields", Toast.LENGTH_SHORT).show();
+            String message = context.getString(R.string.create_toast_fill_fields);
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             return;
         }
         Account acc = new Account();
