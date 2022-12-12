@@ -17,7 +17,6 @@ public class LogInActivity extends AppCompatActivity {
     Button logIn;
     LoggedIn log_In;
     UserRepository userRepo;
-    Context context;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -46,7 +45,7 @@ public class LogInActivity extends AppCompatActivity {
         log_In.logIn(userRepo.findAllAccounts(), name, pass);
         log_In = LoggedIn.getInstance();
         if(!LoggedIn.isLoggedIn()){
-            String message = context.getString(R.string.login_failed);
+            String message = this.getString(R.string.login_failed);
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
         } else{
             Intent intent = new Intent(this, BrowseCarActivity.class);
