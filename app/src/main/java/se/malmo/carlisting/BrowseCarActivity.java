@@ -124,7 +124,7 @@ public class BrowseCarActivity extends AppCompatActivity {
         userName.setText(username);
         userBalance.setText(String.valueOf(balance)+" kr");
 
-        popUpcloseButton = myAccountPopUp.findViewById(R.id.popUpcloseButton);
+        popUpcloseButton = myAccountPopUp.findViewById(R.id.popUpCloseButton);
 
         dialogBuilder.setView(myAccountPopUp);
         dialog = dialogBuilder.create();

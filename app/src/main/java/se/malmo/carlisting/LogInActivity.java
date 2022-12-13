@@ -3,7 +3,6 @@ package se.malmo.carlisting;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -28,7 +27,7 @@ public class LogInActivity extends AppCompatActivity {
 
         username = findViewById(R.id.userName);
         password = findViewById(R.id.userBalance);
-        logIn = findViewById(R.id.popUpcloseButton);
+        logIn = findViewById(R.id.popUpCloseButton);
 
         userRepo = new UserDatabaseHelper(getApplicationContext());
         log_In = LoggedIn.getInstance();
