@@ -34,4 +34,5 @@
     <string name="not_enough_funds">Not enough funds</string>
     <string name="failed_create">Failed to create account</string>
     <string name="success_create">Successfully created account</string>
+    <string name="log_out">Log out</string>
 </resources>

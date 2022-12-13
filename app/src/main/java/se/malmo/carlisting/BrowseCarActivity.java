@@ -111,6 +111,10 @@ public class BrowseCarActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MyCarsActivity.class);
             startActivity(intent);
         }
+        if(item.getItemId() == R.id.logOut){
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 

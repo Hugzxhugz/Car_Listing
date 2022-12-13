@@ -35,4 +35,5 @@
     <string name="not_enough_funds">Inte tillräkligt med pengar</string>
     <string name="failed_create">Misslyckades med att skapa konto</string>
     <string name="success_create">Lyckades skapa konto</string>
+    <string name="log_out">Logga ut</string>
 </resources>
