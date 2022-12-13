@@ -17,6 +17,7 @@
         android:ems="10"
         android:fontFamily="sans-serif-medium"
         android:text="@string/user_name"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="20sp"
         android:gravity="center"
@@ -36,6 +37,7 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/my_balance"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,6 +52,7 @@
         android:backgroundTint="@color/marineBlue"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/log_out"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userBalance" />

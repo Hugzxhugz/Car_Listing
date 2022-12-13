@@ -17,23 +17,6 @@
         app:layout_constraintStart_toStartOf="@+id/carLogoLogin"
         app:srcCompat="@drawable/slogan" />
 
-    <Button
-        android:id="@+id/btnMoveToCreateAccount"
-        android:layout_width="284dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="45dp"
-
-        android:backgroundTint="@color/marineBlue"
-        android:fontFamily="sans-serif-condensed"
-        android:onClick="onConfirmAddBtnClick"
-        android:text="@string/create_account"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMoveToLogIn"
-        app:layout_constraintVertical_bias="0.0" />
-
     <ImageView
         android:id="@+id/carLogoLogin"
         android:layout_width="243dp"
@@ -53,9 +36,27 @@
         android:fontFamily="sans-serif-condensed"
         android:onClick="onConfirmAddBtnClick"
         android:text="@string/login"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/carLogoLogin" />
+
+    <Button
+        android:id="@+id/btnMoveToCreateAccount"
+        android:layout_width="284dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="45dp"
+        android:backgroundTint="@color/marineBlue"
+        android:fontFamily="sans-serif-condensed"
+        android:onClick="onConfirmAddBtnClick"
+        android:text="@string/create_account"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMoveToLogIn"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

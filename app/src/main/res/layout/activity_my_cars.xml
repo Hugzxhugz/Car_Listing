@@ -25,6 +25,8 @@
             android:backgroundTint="#CEEBEF"
             app:autoSizeTextType="uniform"
             android:hint="@string/message_searchbar"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
             android:inputType="textPersonName"
             android:textSize="24sp" />
 
