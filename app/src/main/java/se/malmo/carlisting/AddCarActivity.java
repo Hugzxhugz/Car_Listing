@@ -47,6 +47,8 @@ public class AddCarActivity extends AppCompatActivity {
 
     private void addCar(){
         Car car = new Car();
+        if(MileageInputBox.getText().toString().isEmpty()) MileageInputBox.setText("0");
+        if(PriceInputBox.getText().toString().isEmpty()) PriceInputBox.setText("0");
         car.setModel(CarModelInputBox.getText().toString());
         car.setBrand(CarBrandInputBox.getText().toString());
         car.setModelYear(YearModelInputBox.getText().toString());

@@ -61,7 +61,7 @@ public class EditActivity extends AppCompatActivity {
         DescriptionEditBox.setText(car.getDescription());
     }
 
-    //  button function crashes app
+
     public void onUpdateBtnClick(View view){
         updateCar();
         Intent intent = new Intent(this, BrowseCarActivity.class);
@@ -70,6 +70,8 @@ public class EditActivity extends AppCompatActivity {
 
     private void updateCar(){
         Car car = new Car();
+        if(MileageEditBox.getText().toString().isEmpty()) MileageEditBox.setText("0");
+        if(PriceEditBox.getText().toString().isEmpty()) PriceEditBox.setText("0");
         car.setId(this.car.getId());
         car.setModel(CarModelEditBox.getText().toString());
         car.setBrand(CarBrandEditBox.getText().toString());
@@ -85,9 +87,6 @@ public class EditActivity extends AppCompatActivity {
     public int configPrice(String price){
         price = price.replace(" ", "");
         price = price.replace("kr", "");
-
-
-
         return Integer.parseInt(price);
     }
 
