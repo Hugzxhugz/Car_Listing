@@ -50,7 +50,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper implements UserReposito
     public void createUserTable(SQLiteDatabase db){
         String query = "CREATE TABLE "+DB_TABLE_NAME+" ("+
             COLUMN_ID+" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,"+
-            COLUMN_NAME+" TEXT,"+
+            COLUMN_NAME+" TEXT NOT NULL UNIQUE,"+
             COLUMN_PASSWORD+" TEXT,"+
             COLUMN_BALANCE+" INTEGER)";
         db.execSQL(query);
