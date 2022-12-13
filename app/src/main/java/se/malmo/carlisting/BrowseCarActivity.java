@@ -130,12 +130,9 @@ public class BrowseCarActivity extends AppCompatActivity {
         dialog = dialogBuilder.create();
         dialog.show();
 
-        popUpcloseButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(this, StartActivity.class);
-                startActivity(intent);;
-            }
+        popUpcloseButton.setOnClickListener(view -> {
+            Intent intent = new Intent(this, StartActivity.class);
+            startActivity(intent);
         });
 
 
