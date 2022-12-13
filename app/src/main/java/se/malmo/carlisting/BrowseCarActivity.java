@@ -111,10 +111,7 @@ public class BrowseCarActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MyCarsActivity.class);
             startActivity(intent);
         }
-        if(item.getItemId() == R.id.logOut){
-            Intent intent = new Intent(this, StartActivity.class);
-            startActivity(intent);
-        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -136,7 +133,8 @@ public class BrowseCarActivity extends AppCompatActivity {
         popUpcloseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialog.dismiss();
+                Intent intent = new Intent(this, StartActivity.class);
+                startActivity(intent);;
             }
         });
 

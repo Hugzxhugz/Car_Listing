@@ -13,9 +13,5 @@
         android:id="@+id/myCars"
         app:showAsAction="never" />
 
-    <item
-        android:title="@string/log_out"
-        android:id="@+id/logOut"
-        app:showAsAction="never" />
 
 </menu>
