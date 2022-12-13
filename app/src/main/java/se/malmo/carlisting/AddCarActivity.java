@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddCarActivity extends AppCompatActivity {
 
@@ -41,14 +42,15 @@ public class AddCarActivity extends AppCompatActivity {
 
     public void onConfirmAddBtnClick(View view){
         addCar();
-        Intent intent = new Intent(this, BrowseCarActivity.class);
-        startActivity(intent);
     }
 
     private void addCar(){
+        if(MileageInputBox.getText().toString().isEmpty() || PriceInputBox.getText().toString().isEmpty() || CarBrandInputBox.getText().toString().isEmpty() || CarModelInputBox.getText().toString().isEmpty()
+        || DescriptionInputBox.getText().toString().isEmpty() || YearModelInputBox.getText().toString().isEmpty()){
+            Toast.makeText(this, this.getString(R.string.create_toast_fill_fields), Toast.LENGTH_SHORT).show();
+            return;
+        }
         Car car = new Car();
-        if(MileageInputBox.getText().toString().isEmpty()) MileageInputBox.setText("0");
-        if(PriceInputBox.getText().toString().isEmpty()) PriceInputBox.setText("0");
         car.setModel(CarModelInputBox.getText().toString());
         car.setBrand(CarBrandInputBox.getText().toString());
         car.setModelYear(YearModelInputBox.getText().toString());
@@ -57,5 +59,10 @@ public class AddCarActivity extends AppCompatActivity {
         car.setDescription(DescriptionInputBox.getText().toString());
 
         sqlrepository.save(car);
+        moveToBrowse();
+    }
+    public void moveToBrowse(){
+        Intent intent = new Intent(this, BrowseCarActivity.class);
+        startActivity(intent);
     }
 }

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class EditActivity extends AppCompatActivity {
     Repository carRepository;
@@ -64,24 +65,25 @@ public class EditActivity extends AppCompatActivity {
 
     public void onUpdateBtnClick(View view){
         updateCar();
-        Intent intent = new Intent(this, BrowseCarActivity.class);
-        startActivity(intent);
     }
 
     private void updateCar(){
-        Car car = new Car();
-        if(MileageEditBox.getText().toString().isEmpty()) MileageEditBox.setText("0");
-        if(PriceEditBox.getText().toString().isEmpty()) PriceEditBox.setText("0");
-        car.setId(this.car.getId());
-        car.setModel(CarModelEditBox.getText().toString());
-        car.setBrand(CarBrandEditBox.getText().toString());
-        car.setModelYear(YearModelEditBox.getText().toString());
-        car.setMileage(Integer.parseInt(MileageEditBox.getText().toString()));
-        car.setPrice(configPrice(PriceEditBox.getText().toString()));
-        car.setDescription(DescriptionEditBox.getText().toString());
-        car.setOwnerId(this.car.getOwnerId());
-        carRepository.save(car);
-
+        if(MileageEditBox.getText().toString().isEmpty() || PriceEditBox.getText().toString().isEmpty() || CarBrandEditBox.getText().toString().isEmpty() || CarModelEditBox.getText().toString().isEmpty()
+                || DescriptionEditBox.getText().toString().isEmpty() || YearModelEditBox.getText().toString().isEmpty()){
+            Toast.makeText(this, this.getString(R.string.create_toast_fill_fields), Toast.LENGTH_SHORT).show();
+        } else {
+            Car car = new Car();
+            car.setId(this.car.getId());
+            car.setModel(CarModelEditBox.getText().toString());
+            car.setBrand(CarBrandEditBox.getText().toString());
+            car.setModelYear(YearModelEditBox.getText().toString());
+            car.setMileage(Integer.parseInt(MileageEditBox.getText().toString()));
+            car.setPrice(configPrice(PriceEditBox.getText().toString()));
+            car.setDescription(DescriptionEditBox.getText().toString());
+            car.setOwnerId(this.car.getOwnerId());
+            carRepository.save(car);
+            moveToBrowse();
+        }
     }
 
     public int configPrice(String price){
@@ -89,5 +91,8 @@ public class EditActivity extends AppCompatActivity {
         price = price.replace("kr", "");
         return Integer.parseInt(price);
     }
-
+    public void moveToBrowse(){
+        Intent intent = new Intent(this, BrowseCarActivity.class);
+        startActivity(intent);
+    }
 }
