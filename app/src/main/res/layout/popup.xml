@@ -2,9 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/PopUpConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@color/cartoonBlue"
+    android:foregroundGravity="center_vertical|center"
+    app:layout_anchorGravity="center"
     tools:context=".LogInActivity">
 
     <TextView
@@ -16,11 +20,11 @@
         android:backgroundTint="#C8E3E6"
         android:ems="10"
         android:fontFamily="sans-serif-medium"
-        android:text="@string/user_name"
-        android:textColor="@color/black"
-        android:textAlignment="center"
-        android:textSize="20sp"
         android:gravity="center"
+        android:text="@string/user_name"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,8 +41,8 @@
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="@string/my_balance"
-        android:textColor="@color/black"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,5 +96,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/car_icon" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/closeBtn"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        app:fabCustomSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_close" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

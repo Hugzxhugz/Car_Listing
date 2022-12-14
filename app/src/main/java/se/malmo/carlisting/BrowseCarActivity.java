@@ -38,6 +38,7 @@ public class BrowseCarActivity extends AppCompatActivity {
     private AlertDialog dialog;
     private TextView userName, userBalance;
     private Button popUpcloseButton;
+    private FloatingActionButton closeBtn;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -125,6 +126,7 @@ public class BrowseCarActivity extends AppCompatActivity {
         userBalance.setText(String.valueOf(balance)+" kr");
 
         popUpcloseButton = myAccountPopUp.findViewById(R.id.popUpCloseButton);
+        closeBtn = myAccountPopUp.findViewById(R.id.closeBtn);
 
         dialogBuilder.setView(myAccountPopUp);
         dialog = dialogBuilder.create();
@@ -134,6 +136,11 @@ public class BrowseCarActivity extends AppCompatActivity {
             Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
         });
+
+        closeBtn.setOnClickListener(view -> {
+            dialog.dismiss();
+        });
+
 
 
 

@@ -19,6 +19,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.util.ArrayList;
 
 public class MyCarsActivity extends AppCompatActivity {
@@ -36,6 +38,7 @@ public class MyCarsActivity extends AppCompatActivity {
     private TextView userName,userBalance;
     private Button popUpcloseButton;
     private AlertDialog dialog;
+    private FloatingActionButton closeBtn;
 
 
     @Override
@@ -118,6 +121,7 @@ public class MyCarsActivity extends AppCompatActivity {
         userBalance.setText(String.valueOf(balance)+" kr");
 
         popUpcloseButton = myAccountPopUp.findViewById(R.id.popUpCloseButton);
+        closeBtn = myAccountPopUp.findViewById(R.id.closeBtn);
 
         dialogBuilder.setView(myAccountPopUp);
         dialog = dialogBuilder.create();
@@ -126,6 +130,9 @@ public class MyCarsActivity extends AppCompatActivity {
         popUpcloseButton.setOnClickListener(view -> {
             Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
+        });
+        closeBtn.setOnClickListener(view -> {
+            dialog.dismiss();
         });
 
 
