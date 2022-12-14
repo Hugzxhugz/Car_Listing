@@ -57,6 +57,7 @@
         android:fontFamily="sans-serif-condensed"
         android:text="@string/log_out"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userBalance" />
